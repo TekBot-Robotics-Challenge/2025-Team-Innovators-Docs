@@ -1,0 +1,26 @@
+{
+  "title": "Documentation IT",
+  "description": "Tout sur les aspects informatiques du projet TechBot",
+  "sections": [
+    {
+      "id": "logiciels",
+      "title": "Logiciels",
+      "content": "Cette section détaille les logiciels utilisés dans le projet TechBot, y compris les systèmes d'exploitation et les applications personnalisées."
+    },
+    {
+      "id": "algorithmes",
+      "title": "Algorithmes",
+      "content": "Information sur les algorithmes clés utilisés pour le contrôle, la navigation et le traitement des données du TechBot."
+    },
+    {
+      "id": "interfaces",
+      "title": "Interfaces",
+      "content": "Documentation sur les interfaces utilisateur et les API développées pour interagir avec le TechBot."
+    },
+    {
+      "id": "communication",
+      "title": "Communication",
+      "content": "Détails sur les protocoles de communication utilisés entre les différents composants du système TechBot."
+    }
+  ]
+}

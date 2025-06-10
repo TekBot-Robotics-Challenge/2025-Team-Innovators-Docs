@@ -1,0 +1,26 @@
+{
+  "title": "Documentation Électronique",
+  "description": "Tout sur les composants électroniques du projet TechBot",
+  "sections": [
+    {
+      "id": "composants",
+      "title": "Composants",
+      "content": "Cette section détaille tous les composants électroniques utilisés dans le projet TechBot. Nous utilisons une variété de capteurs, microcontrôleurs et circuits intégrés pour assurer le bon fonctionnement du robot."
+    },
+    {
+      "id": "circuits",
+      "title": "Circuits",
+      "content": "Les schémas de circuits et les PCB sont documentés ici. Nous avons conçu plusieurs circuits personnalisés pour répondre aux besoins spécifiques du projet."
+    },
+    {
+      "id": "alimentation",
+      "title": "Alimentation",
+      "content": "Cette section couvre le système d'alimentation du TechBot, y compris les batteries, les régulateurs de tension et les systèmes de gestion d'énergie."
+    },
+    {
+      "id": "capteurs",
+      "title": "Capteurs",
+      "content": "Détails sur les différents capteurs utilisés pour la perception de l'environnement, y compris les capteurs de distance, de lumière et d'orientation."
+    }
+  ]
+}
