@@ -1,3 +1,5 @@
+import random
+
 class Robots:
     """
     Classe de base représentant un robot générique.
@@ -114,14 +116,19 @@ class RobotDomestique(Robots):
 
     def nettoyer(self, zone):
         """
-        Effectue un nettoyage dans une zone si l'énergie est suffisante.
+        Effectue un nettoyage dans une zone.
         """
-        if self.energie >= 20:
-            self.energie = self.energie - 20
-            self.__taches_effectuees.append(f"Nettoyage de {zone}")
-            print(f"{self.nom} a nettoyé {zone}")
-        else:
-            print(f"{self.nom} n'a pas assez d'énergie pour nettoyer")
+        self.energie = self.energie - 20
+        self.__taches_effectuees.append(f"nettoyage {zone}")
+        print(f"{self.nom} a nettoyé {zone}")
+            
+    def ranger(self, zone):
+        """
+        Effectue un rangement dans une zone.
+        """
+        self.energie = self.energie - 20
+        self.__taches_effectuees.append(f"rangement {zone}")
+        print(f"{self.nom} a rangé {zone}")
 
     def move(self, x, y):
         """
@@ -146,16 +153,25 @@ class RobotDomestique(Robots):
 
     def travailler(self):
         """
-        Effectue une tâche ménagère choisie au hasard.
+        Effectue toutes les tâches ménagères si l'énergie est suffisante.
         """
         print(f"{self.nom} commence ses tâches ménagères")
-        if self.__taches_menageres:
-            import random
-            tache = random.choice(["salon", "cuisine", "chambre", "salle de bain"])
-            self.nettoyer(tache)
+        for tache in self.__taches_menageres:
+            if self.energie < 20:
+                print(f"{self.nom} n'a pas assez d'énergie pour continuer les tâches ménagères")
+                break
+            
+            # Choisie une zone aléatoire pour la tâche
+            zone = random.choice([zone for zone in ["salon", "cuisine", "chambre", "salle de bain"] if tache+" "+zone not in self.__taches_effectuees])
+            
+            if tache == "nettoyage":
+                self.nettoyer(zone)
+            elif tache == "rangement":
+                self.ranger(zone)
+            else:
+                print(f"{self.nom} ne sait pas effectuer la tâche: {tache}")
+        
         self.action_speciale()
-
-
 class RobotIndustriel(Robots):
     """
     Robot conçu pour des tâches industrielles de manutention.
@@ -245,7 +261,6 @@ class RobotIndustriel(Robots):
         Effectue une tâche de manutention en soulevant et déposant une charge.
         """
         print(f"{self.nom} commence ses opérations industrielles")
-        import random
         poids = random.randint(10, self.__capacite_charge)
         self.soulever(poids)
         if self.__charge_actuelle > 0:
