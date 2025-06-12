@@ -13,5 +13,6 @@ This folder aims to:
 📂 documentation-mecanique/  
 │  
 ├── 📄 README.md → This file (general overview)  
-├── 📁 conception/ → CAD files and technical studies  
-└── 📁 fabrication/ → Production documentation  
+├── 📁 output/ → Solidworks files 
+├── 📁 screenshots/ → Technical realisations 
+└── 📁 documentation/ → Production documentation  
