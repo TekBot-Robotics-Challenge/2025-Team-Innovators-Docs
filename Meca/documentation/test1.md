@@ -54,13 +54,15 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 
 ---
 
-<!-- ### 🔹 4 – Aluminum Alloy 1060
-- Calculated Mass: **[XX.XX g]**
-- Expected Mass: **[XX.XX ± 5%]**
+### 🔹 4 – Aluminum Alloy 1060
+- Calculated Mass: **302.48 g**
 - SolidWorks Screenshot:
-  ![Part 4](./images/piece4.png)
+   ![Part 4 Step 1](../screenshots/pice4step1.png)
+   ![Part 4 Step 1](../screenshots/piece4Step2.png)
+   ![Part 4 Step 1](../screenshots/piece4Step4.png)
+   ![Part 4 Final](../screenshots/piece4Final.png)
 
---- -->
+---
 
 ## 🧩 Part 2 – Mechanical Gripper Assembly
 
@@ -109,7 +111,7 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 ---
 
 ## 📂 Files Attached to the GitHub Repository
-- `.SLDPRT` files for parts 1 to 3
+- `.SLDPRT` files for parts 1 to 4
 - `.SLDASM` file for the gripper assembly
 - Screenshots of the modeling steps
 - PDF exports of mass properties
