@@ -32,6 +32,7 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 - Calculated Mass: **2900.43 g**
 - SolidWorks Screenshot:
   ![Part 1](../screenshots/piece1.png)
+  ![Part 1](../screenshots/piece1final.png)
 
 ---
 
@@ -39,6 +40,7 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 - Calculated Mass: **290.53 g**
 - SolidWorks Screenshot:
   ![Part 2](../screenshots/piece2.png)
+  ![Part 2](../screenshots/piece2final.png)
 
 ---
 
@@ -71,25 +73,31 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 - **Cylinder fixed** in minimum and maximum positions to measure the center of gravity.
 - **Symmetry between linkages**: enforced using a midplane and symmetry constraint.
 
+### 🔄 Assembly:
+
+ ![assemblyPince](../screenshots/assemblage1.png)
+
+
 ### 🔄 Result:
-- Functional assembly.
- ![position minimal](../screenshots//pincePositionMaximal.png)
+- minimum position.
+ ![position minimal](../screenshots/pincePositionMaximal.png)
+
+- maximum position.
+ ![position maximum](../screenshots/pincePositionMinimal.png)
 ---
 
 ## 📍 Mass Analysis Results
-
-### ▶️ Cylinder in **maximum position**:
-- Center of mass:
-  - **X**: [XXX.XX mm]
-  - **Y**: [XXX.XX mm]
-  - **Z**: [XXX.XX mm]
-
 ### ▶️ Cylinder in **minimum position**:
 - Center of mass:
   - **X**: 701.67mm
   - **Y**: 903.47 mm
   - **Z**: 1322.70 mm
-  
+### ▶️ Cylinder in **maximum position**:
+- Center of mass:
+  - **X**: 705.02 mm
+  - **Y**: 903.37 mm
+  - **Z**: 1322.70 mm
+   
 ---
 
 ## 📝 Personal Notes
@@ -107,3 +115,4 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 - PDF exports of mass properties
 
 ---
+*Document rédigé par Mumu.*
