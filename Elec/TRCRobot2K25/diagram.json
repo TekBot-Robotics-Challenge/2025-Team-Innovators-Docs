@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Andassa Ramananandro",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -135.8, "left": 333.6, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -57, "left": -96.6, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 42.22, "left": 242.32, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -262.4,
+      "left": -52,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "uno:A4", "imu1:SDA", "green", [ "v57.5", "h81", "v-163.2", "h57.6" ] ],
+    [ "uno:A5", "imu1:SCL", "green", [ "v19.1", "h81.1", "v-144", "h57.6" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h-105.6", "v153.9", "h182.4" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h-76.8", "v144.2" ] ],
+    [ "uno:5V", "bb1:17b.j", "red", [ "v86.3", "h503", "v-230.4" ] ],
+    [ "imu1:VCC", "bb1:1b.j", "red", [ "v0" ] ],
+    [ "uno:GND.1", "bb1:1t.a", "black", [ "v-28.8", "h307.5", "v-48" ] ],
+    [ "lcd1:GND", "bb1:2t.a", "black", [ "h-48", "v-48", "h470.4" ] ],
+    [ "imu1:GND", "bb1:9t.a", "black", [ "v-220.8", "h115.28", "v38.4" ] ],
+    [ "lcd1:VCC", "bb1:9b.j", "red", [ "h-134.4", "v451.3", "h633.6" ] ]
+  ],
+  "dependencies": {}
+}
