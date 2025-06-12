@@ -115,4 +115,4 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 - PDF exports of mass properties
 
 ---
-*Document rédigé par Mumu.*
+*Documented by Mumu.*
