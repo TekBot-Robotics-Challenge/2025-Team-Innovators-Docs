@@ -28,22 +28,22 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 
 ---
 
-### 🔹 Part 1 – AISI 1020 Steel
-- Calculated Mass: **[XX.XX g]**
+### 🔹 1 – AISI 1020 Steel
+- Calculated Mass: **2900.43 g**
 - SolidWorks Screenshot:
-  ![Part 1](./images/piece1.png)
+  ![Part 1](../screenshots/piece1.png)
 
 ---
 
-### 🔹 Part 2 – Aluminum Alloy 1060
-- Calculated Mass: **[XX.XX g]**
+### 🔹 2 – Aluminum Alloy 1060
+- Calculated Mass: **290.53 g**
 - SolidWorks Screenshot:
-  ![Part 2](./images/piece2.png)
+  ![Part 2](../screenshots/piece2.png)
 
 ---
 
-### 🔹 Part 3 – AISI 1020 Steel
-- Calculated Mass: **[1639.86 g]**
+### 🔹 3 – AISI 1020 Steel
+- Calculated Mass: **1639.86 g**
 - SolidWorks Screenshots:
   ![Part 3 Step 1](../screenshots/piece3Step1.png)
   ![Part 3 Step 2](../screenshots/piece3step2.png)
@@ -52,13 +52,13 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 
 ---
 
-### 🔹 Part 4 – Aluminum Alloy 1060
+<!-- ### 🔹 4 – Aluminum Alloy 1060
 - Calculated Mass: **[XX.XX g]**
 - Expected Mass: **[XX.XX ± 5%]**
 - SolidWorks Screenshot:
   ![Part 4](./images/piece4.png)
 
----
+--- -->
 
 ## 🧩 Part 2 – Mechanical Gripper Assembly
 
@@ -73,16 +73,10 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 
 ### 🔄 Result:
 - Functional assembly.
-
+ ![position minimal](../screenshots//pincePositionMaximal.png)
 ---
 
 ## 📍 Mass Analysis Results
-
-### ▶️ Cylinder in **minimum position**:
-- Center of mass:
-  - **X**: [XXX.XX mm]
-  - **Y**: [XXX.XX mm]
-  - **Z**: [XXX.XX mm]
 
 ### ▶️ Cylinder in **maximum position**:
 - Center of mass:
@@ -90,6 +84,12 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
   - **Y**: [XXX.XX mm]
   - **Z**: [XXX.XX mm]
 
+### ▶️ Cylinder in **minimum position**:
+- Center of mass:
+  - **X**: 701.67mm
+  - **Y**: 903.47 mm
+  - **Z**: 1322.70 mm
+  
 ---
 
 ## 📝 Personal Notes
@@ -101,7 +101,7 @@ Design and assemble the simple mechanical parts provided in the challenge in ord
 ---
 
 ## 📂 Files Attached to the GitHub Repository
-- `.SLDPRT` files for parts 1 to 4
+- `.SLDPRT` files for parts 1 to 3
 - `.SLDASM` file for the gripper assembly
 - Screenshots of the modeling steps
 - PDF exports of mass properties
