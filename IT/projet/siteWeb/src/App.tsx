@@ -22,10 +22,9 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/2025-Team-Innovators-Docs">
       <div className="min-h-screen w-full">
         <Navbar />
-        {/* Conteneur principal avec padding-top pour éviter que le contenu soit caché */}
         <main className="pt-16 md:pt-20 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -38,5 +37,6 @@ function App() {
     </Router>
   )
 }
+
 
 export default App

@@ -18,6 +18,6 @@ function App() {
             once: false,
         });
     }, []);
-    return (_jsx(Router, { children: _jsxs("div", { className: "min-h-screen w-full", children: [_jsx(Navbar, {}), _jsx("main", { className: "pt-16 md:pt-20 w-full", children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(Home, {}) }), _jsx(Route, { path: "/electronique", element: _jsx(Electronique, {}) }), _jsx(Route, { path: "/mecanique", element: _jsx(Mecanique, {}) }), _jsx(Route, { path: "/it", element: _jsx(IT, {}) })] }) })] }) }));
+    return (_jsx(Router, { basename: "/2025-Team-Innovators-Docs", children: _jsxs("div", { className: "min-h-screen w-full", children: [_jsx(Navbar, {}), _jsx("main", { className: "pt-16 md:pt-20 w-full", children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(Home, {}) }), _jsx(Route, { path: "/electronique", element: _jsx(Electronique, {}) }), _jsx(Route, { path: "/mecanique", element: _jsx(Mecanique, {}) }), _jsx(Route, { path: "/it", element: _jsx(IT, {}) })] }) })] }) }));
 }
 export default App;
