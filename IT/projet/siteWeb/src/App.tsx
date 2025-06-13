@@ -12,7 +12,9 @@ import Home from './pages/Home';
 import Electronique from './pages/Electronique';
 import Mecanique from './pages/Mecanique';
 import IT from './pages/IT';
-
+const basename = import.meta.env.DEV
+  ? '/'  // en dev local, pas de base spécifique
+  : '/2025-Team-Innovators-Docs'; // en prod GitHub Pages
 function App() {
   useEffect(() => {
     AOS.init({
@@ -22,7 +24,8 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/2025-Team-Innovators-Docs">
+    // <Router basename="/2025-Team-Innovators-Docs">
+    <Router basename={basename}>
       <div className="min-h-screen w-full">
         <Navbar />
         <main className="pt-16 md:pt-20 w-full">
