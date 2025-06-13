@@ -3,24 +3,16 @@
   "description": "Tout sur les aspects informatiques du projet TechBot",
   "sections": [
     {
-      "id": "logiciels",
-      "title": "Logiciels",
-      "content": "Cette section détaille les logiciels utilisés dans le projet TechBot, y compris les systèmes d'exploitation et les applications personnalisées."
+      "id": "SiteWeb",
+      "title": "Site Web de Documentation Innovator",
+      "content": "Il s'agit du site web de documentation pour le projet Innovator, qui fournit des informations détaillées sur les fonctionnalités, les API et les guides d'utilisation.",
+      "link": "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/"
     },
     {
-      "id": "algorithmes",
-      "title": "Algorithmes",
-      "content": "Information sur les algorithmes clés utilisés pour le contrôle, la navigation et le traitement des données du TechBot."
-    },
-    {
-      "id": "interfaces",
-      "title": "Interfaces",
-      "content": "Documentation sur les interfaces utilisateur et les API développées pour interagir avec le TechBot."
-    },
-    {
-      "id": "communication",
-      "title": "Communication",
-      "content": "Détails sur les protocoles de communication utilisés entre les différents composants du système TechBot."
+      "id": "Classe",
+      "title": "Création d’une classe pour un Robot",
+      "content": "Cette section explique comment créer une classe pour représenter un robot dans le projet Innovator. Elle couvre les attributs et méthodes essentiels pour modéliser le comportement du robot.",
+      "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/IT/projet/Test%201"
     }
   ]
 }

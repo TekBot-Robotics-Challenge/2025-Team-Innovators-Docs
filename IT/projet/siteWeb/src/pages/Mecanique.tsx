@@ -5,6 +5,7 @@ interface Section {
   id: string;
   title: string;
   content: string;
+  link: string;
 }
 
 interface MecaniqueData {
@@ -180,6 +181,9 @@ const Mecanique = () => {
                       <div className="prose prose-lg max-w-none">
                         <p className="text-gray-700 leading-relaxed text-lg">
                           {section.content}
+                        </p>
+                        <p className="text-gray-700 leading-relaxed text-lg">
+                          {section.link}
                         </p>
                       </div>
                       

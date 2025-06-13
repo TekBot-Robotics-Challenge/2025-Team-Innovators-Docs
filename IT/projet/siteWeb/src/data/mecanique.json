@@ -5,22 +5,26 @@
     {
       "id": "structure",
       "title": "Structure",
-      "content": "Cette section détaille la structure physique du TechBot, y compris le châssis et les supports pour les différents composants."
+      "content": "Cette section détaille la structure physique du TechBot, y compris le châssis et les supports pour les différents composants.",
+      "link": "/mecanique/structure"
     },
     {
       "id": "materiaux",
       "title": "Matériaux",
-      "content": "Information sur les matériaux utilisés dans la construction du TechBot, leurs propriétés et pourquoi ils ont été choisis."
+      "content": "Information sur les matériaux utilisés dans la construction du TechBot, leurs propriétés et pourquoi ils ont été choisis.",
+      "link": "/mecanique/materiaux"
     },
     {
       "id": "assemblage",
       "title": "Assemblage",
-      "content": "Guide étape par étape pour l'assemblage des composants mécaniques du TechBot."
+      "content": "Guide étape par étape pour l'assemblage des composants mécaniques du TechBot.",
+      "link": "/mecanique/assemblage"
     },
     {
       "id": "mobilite",
       "title": "Mobilité",
-      "content": "Détails sur les systèmes de mobilité, y compris les roues, les moteurs et les mécanismes de direction."
+      "content": "Détails sur les systèmes de mobilité, y compris les roues, les moteurs et les mécanismes de direction.",
+      "link": "/mecanique/mobilite"
     }
   ]
 }
