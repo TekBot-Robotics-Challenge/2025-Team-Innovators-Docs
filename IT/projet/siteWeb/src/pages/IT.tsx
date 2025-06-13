@@ -5,6 +5,7 @@ interface Section {
   id: string;
   title: string;
   content: string;
+  link: string;
 }
 
 interface ITData {
@@ -181,6 +182,9 @@ const IT = () => {
                         <p className="text-gray-700 leading-relaxed text-lg">
                           {section.content}
                         </p>
+                        <a href={section.link} className=" text-lg">
+                          Voir plus
+                        </a>
                       </div>
                       
                       {/* Decorative elements */}

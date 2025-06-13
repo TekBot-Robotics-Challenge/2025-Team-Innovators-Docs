@@ -1,10 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Zap, Cpu, CircuitBoard, Settings, ChevronRight, FileText } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import readmeContent from '../../../../../Elec/semaine1.md?raw'; // Assurez-vous que le chemin est correct
+
+// Extend the Window interface to include AOS
+declare global {
+  interface Window {
+    AOS?: {
+      refresh: () => void;
+    };
+  }
+}
 
 interface Section {
   id: string;
   title: string;
   content: string;
+  link: string;
 }
 
 interface ElectroniqueData {
@@ -181,7 +193,12 @@ const Electronique = () => {
                         <p className="text-gray-700 leading-relaxed text-lg">
                           {section.content}
                         </p>
+                        <a href={section.link} className=" text-lg">
+                          Voir plus
+                        </a>
+                        <ReactMarkdown>{readmeContent}</ReactMarkdown>
                       </div>
+                      
                       
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
