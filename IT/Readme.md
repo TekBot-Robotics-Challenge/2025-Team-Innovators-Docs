@@ -11,8 +11,8 @@ This folder aims to:
 
 ## 📁 Folder Structure
 
-📂 documentation-it/  
+📂 IT/  
 │  
-├── 📄 README.md → General folder overview  
-├── 📁 projets/ → Detailed sheets for each IT project  
-└── 📁 outils/ → Tutorials and configurations for used tools  
+├── 📄 Readme.md → General folder overview  
+├── 📁 week-1/ → Creating class for a robot test from the first week
+├── 📁 week-2/ → ROS2 introduction test from the second week

@@ -1,0 +1,4 @@
+[console_scripts]
+publisher_node = sensor_data_evaluation.publisher_node:main
+subscriber_node = sensor_data_evaluation.subscriber_node:main
+

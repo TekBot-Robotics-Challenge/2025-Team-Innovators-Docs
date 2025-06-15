@@ -1,0 +1,41 @@
+[0.608s] Invoking command in '/home/innovator/ros2_ws/src/sensor_data_evaluation': PYTHONPATH=/home/innovator/ros2_ws/build/sensor_data_evaluation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sensor_data_evaluation build --build-base /home/innovator/ros2_ws/build/sensor_data_evaluation/build install --record /home/innovator/ros2_ws/build/sensor_data_evaluation/install.log --single-version-externally-managed install_data
+[0.826s] running egg_info
+[0.827s] creating ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info
+[0.827s] writing ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/PKG-INFO
+[0.828s] writing dependency_links to ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/dependency_links.txt
+[0.828s] writing entry points to ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/entry_points.txt
+[0.828s] writing requirements to ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/requires.txt
+[0.828s] writing top-level names to ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/top_level.txt
+[0.829s] writing manifest file '../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/SOURCES.txt'
+[0.830s] reading manifest file '../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/SOURCES.txt'
+[0.831s] writing manifest file '../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info/SOURCES.txt'
+[0.832s] running build
+[0.832s] running build_py
+[0.832s] creating /home/innovator/ros2_ws/build/sensor_data_evaluation/build
+[0.832s] creating /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib
+[0.832s] creating /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation
+[0.832s] copying sensor_data_evaluation/subscriber_node.py -> /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation
+[0.832s] copying sensor_data_evaluation/__init__.py -> /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation
+[0.833s] copying sensor_data_evaluation/publisher_node.py -> /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation
+[0.833s] running install
+[0.833s] running install_lib
+[0.834s] creating /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation
+[0.834s] copying /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation/subscriber_node.py -> /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation
+[0.834s] copying /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation/__init__.py -> /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation
+[0.834s] copying /home/innovator/ros2_ws/build/sensor_data_evaluation/build/lib/sensor_data_evaluation/publisher_node.py -> /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation
+[0.834s] byte-compiling /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation/subscriber_node.py to subscriber_node.cpython-310.pyc
+[0.835s] byte-compiling /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation/__init__.py to __init__.cpython-310.pyc
+[0.835s] byte-compiling /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation/publisher_node.py to publisher_node.cpython-310.pyc
+[0.836s] running install_data
+[0.836s] creating /home/innovator/ros2_ws/install/sensor_data_evaluation/share/ament_index
+[0.836s] creating /home/innovator/ros2_ws/install/sensor_data_evaluation/share/ament_index/resource_index
+[0.837s] creating /home/innovator/ros2_ws/install/sensor_data_evaluation/share/ament_index/resource_index/packages
+[0.837s] copying resource/sensor_data_evaluation -> /home/innovator/ros2_ws/install/sensor_data_evaluation/share/ament_index/resource_index/packages
+[0.837s] copying package.xml -> /home/innovator/ros2_ws/install/sensor_data_evaluation/share/sensor_data_evaluation
+[0.837s] running install_egg_info
+[0.839s] Copying ../../build/sensor_data_evaluation/sensor_data_evaluation.egg-info to /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages/sensor_data_evaluation-0.0.0-py3.10.egg-info
+[0.840s] running install_scripts
+[0.864s] Installing publisher_node script to /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/sensor_data_evaluation
+[0.864s] Installing subscriber_node script to /home/innovator/ros2_ws/install/sensor_data_evaluation/lib/sensor_data_evaluation
+[0.864s] writing list of installed files to '/home/innovator/ros2_ws/build/sensor_data_evaluation/install.log'
+[0.890s] Invoked command in '/home/innovator/ros2_ws/src/sensor_data_evaluation' returned '0': PYTHONPATH=/home/innovator/ros2_ws/build/sensor_data_evaluation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/innovator/ros2_ws/install/sensor_data_evaluation/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sensor_data_evaluation build --build-base /home/innovator/ros2_ws/build/sensor_data_evaluation/build install --record /home/innovator/ros2_ws/build/sensor_data_evaluation/install.log --single-version-externally-managed install_data
