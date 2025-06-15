@@ -14,5 +14,7 @@ This folder aims to:
 📂 IT/  
 │  
 ├── 📄 Readme.md → General folder overview  
+|
 ├── 📁 week-1/ → Creating class for a robot test from the first week
+|
 ├── 📁 week-2/ → ROS2 introduction test from the second week
