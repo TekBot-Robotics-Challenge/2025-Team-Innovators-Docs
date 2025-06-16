@@ -85,7 +85,21 @@ const Electronique = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const navbar =
+        document.querySelector("nav") ||
+        document.querySelector(".navbar") ||
+        document.querySelector("header");
+      const navbarHeight = navbar ? navbar.offsetHeight : 80; // 80px par défaut si navbar non trouvée
+
+      // Calculer la position avec un offset
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight - 20; // -20px pour un peu d'espace supplémentaire
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -149,7 +163,7 @@ const Electronique = () => {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Sidebar Navigation */}
             <div className="lg:col-span-1">
-              <div className="sticky top-6">
+              <div className="fixed top-[50%] transform -translate-y-1/2">
                 <div className="bg-white/70 backdrop-blur-lg p-6 rounded-3xl shadow-xl border border-white/20">
                   <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent flex items-center gap-2">
                     <FileText className="w-6 h-6 text-blue-600" />
@@ -176,7 +190,7 @@ const Electronique = () => {
                               isActive ? "text-white" : "text-blue-600"
                             } transition-transform group-hover:scale-110`}
                           />
-                          <span className="font-medium">{section.title}</span>
+                          <span className="font-medium">{section.id}</span>
                           <ChevronRight
                             className={`w-4 h-4 ml-auto transition-transform ${
                               isActive
