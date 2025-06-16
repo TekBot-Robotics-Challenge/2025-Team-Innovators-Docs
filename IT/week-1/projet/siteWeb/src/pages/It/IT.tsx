@@ -161,7 +161,7 @@ const IT = () => {
                               isActive ? "text-white" : "text-purple-600"
                             } transition-transform group-hover:scale-110`}
                           />
-                          <span className="font-medium">{section.title}</span>
+                          <span className="font-medium">{section.id}</span>
                           <ChevronRight
                             className={`w-4 h-4 ml-auto transition-transform ${
                               isActive
