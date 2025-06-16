@@ -1,16 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Zap, Cpu, CircuitBoard, Settings, ChevronRight, FileText } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import readmeContent from '../../../../../Elec/semaine1.md?raw'; // Assurez-vous que le chemin est correct
-
-// Extend the Window interface to include AOS
-declare global {
-  interface Window {
-    AOS?: {
-      refresh: () => void;
-    };
-  }
-}
+import { useEffect, useState } from "react";
+import {
+  Code,
+  Database,
+  Cloud,
+  Terminal,
+  ChevronRight,
+  FileText,
+} from "lucide-react";
 
 interface Section {
   id: string;
@@ -19,25 +15,25 @@ interface Section {
   link: string;
 }
 
-interface ElectroniqueData {
+interface ITData {
   title: string;
   description: string;
   sections: Section[];
 }
 
-const Electronique = () => {
-  const [data, setData] = useState<ElectroniqueData | null>(null);
-  const [activeSection, setActiveSection] = useState<string>('');
+const IT = () => {
+  const [data, setData] = useState<ITData | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   // Import des données depuis le fichier JSON
   useEffect(() => {
     // Charger les données depuis le fichier JSON
-    import('../data/electronique.json')
+    import("../../data/it.json")
       .then((jsonData) => {
         setData(jsonData.default);
       })
       .catch((error) => {
-        console.error("Erreur lors du chargement des données électroniques:", error);
+        console.error("Erreur lors du chargement des données IT:", error);
       });
   }, []);
 
@@ -50,7 +46,7 @@ const Electronique = () => {
     // Observer pour la navigation active
     const handleScroll = () => {
       if (!data) return;
-      
+
       const sections = data.sections;
       const scrollPosition = window.scrollY + 100;
 
@@ -59,7 +55,7 @@ const Electronique = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section.id);
             break;
@@ -68,32 +64,32 @@ const Electronique = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [data]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const getSectionIcon = (sectionId: string) => {
     const icons = {
-      composants: CircuitBoard,
-      circuits: Cpu,
-      capteurs: Settings,
-      programmation: Zap
+      logiciels: Code,
+      algorithmes: Terminal,
+      "base-donnees": Database,
+      deployment: Cloud,
     };
     return icons[sectionId as keyof typeof icons] || FileText;
   };
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-100 flex items-center justify-center">
-        <div className="flex items-center gap-3 text-blue-600">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-100 flex items-center justify-center">
+        <div className="flex items-center gap-3 text-purple-600">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
           <span className="text-lg font-medium">Chargement...</span>
         </div>
       </div>
@@ -101,27 +97,33 @@ const Electronique = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-100 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-cyan-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-indigo-400/20 to-blue-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-indigo-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-400/10 to-purple-400/10 rounded-full blur-2xl"></div>
       </div>
 
       <div className="relative z-10 w-full">
         {/* Hero Section */}
-        <section className="px-6 py-16 max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        <section
+          className="px-6 py-16 max-w-7xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-              <Zap className="w-8 h-8 text-blue-500 motion-preset-oscillate motion-duration-700" />
-              <span className="text-lg font-semibold uppercase tracking-wider">Électronique • Circuits • Innovation</span>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+              <Code className="w-8 h-8 text-purple-500 motion-preset-seesaw motion-duration-300" />
+              <span className="text-lg font-semibold uppercase tracking-wider">
+                IT • Développement • Innovation
+              </span>
             </div>
-            
-            <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-cyan-800 bg-clip-text text-transparent leading-tight">
+
+            <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-gray-900 via-purple-800 to-pink-800 bg-clip-text text-transparent leading-tight">
               {data.title}
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {data.description}
             </p>
@@ -135,29 +137,39 @@ const Electronique = () => {
             <div className="lg:col-span-1">
               <div className="sticky top-6">
                 <div className="bg-white/70 backdrop-blur-lg p-6 rounded-3xl shadow-xl border border-white/20">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-blue-600" />
+                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-700 to-pink-700 bg-clip-text text-transparent flex items-center gap-2">
+                    <FileText className="w-6 h-6 text-purple-600" />
                     Sections
                   </h2>
-                  
+
                   <nav className="space-y-2">
                     {data.sections.map((section) => {
                       const IconComponent = getSectionIcon(section.id);
                       const isActive = activeSection === section.id;
-                      
+
                       return (
                         <button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
                           className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-center gap-3 group ${
-                            isActive 
-                              ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg scale-105' 
-                              : 'hover:bg-blue-50 text-gray-700 hover:scale-102'
+                            isActive
+                              ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg scale-105"
+                              : "hover:bg-purple-50 text-gray-700 hover:scale-102"
                           }`}
                         >
-                          <IconComponent className={`w-5 h-5 ${isActive ? 'text-white' : 'text-blue-600'} transition-transform group-hover:scale-110`} />
+                          <IconComponent
+                            className={`w-5 h-5 ${
+                              isActive ? "text-white" : "text-purple-600"
+                            } transition-transform group-hover:scale-110`}
+                          />
                           <span className="font-medium">{section.title}</span>
-                          <ChevronRight className={`w-4 h-4 ml-auto transition-transform ${isActive ? 'translate-x-1' : 'group-hover:translate-x-1'}`} />
+                          <ChevronRight
+                            className={`w-4 h-4 ml-auto transition-transform ${
+                              isActive
+                                ? "translate-x-1"
+                                : "group-hover:translate-x-1"
+                            }`}
+                          />
                         </button>
                       );
                     })}
@@ -171,24 +183,24 @@ const Electronique = () => {
               <div className="space-y-8">
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
-                  
+
                   return (
-                    <div 
-                      key={section.id} 
-                      id={section.id} 
+                    <div
+                      key={section.id}
+                      id={section.id}
                       className="group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
                       data-aos="fade-up"
                       data-aos-delay={`${index * 100}`}
                     >
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
-                        <h2 className="text-3xl font-bold text-blue-700 group-hover:text-blue-600 transition-colors duration-300">
+                        <h2 className="text-3xl font-bold text-purple-700 group-hover:text-purple-600 transition-colors duration-300">
                           {section.title}
                         </h2>
                       </div>
-                      
+
                       <div className="prose prose-lg max-w-none">
                         <p className="text-gray-700 leading-relaxed text-lg">
                           {section.content}
@@ -196,13 +208,11 @@ const Electronique = () => {
                         <a href={section.link} className=" text-lg">
                           Voir plus
                         </a>
-                        <ReactMarkdown>{readmeContent}</ReactMarkdown>
                       </div>
-                      
-                      
+
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
-                        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
                     </div>
                   );
@@ -213,13 +223,23 @@ const Electronique = () => {
         </div>
 
         {/* Bottom Call to Action */}
-        <section className="px-6 py-16 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="250">
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-12 rounded-3xl text-white shadow-2xl text-center">
-            <Zap className="w-16 h-16 mx-auto mb-6 animate-pulse" />
-            <h3 className="text-3xl font-bold mb-4">Prêt à explorer ?</h3>
-            <p className="text-xl mb-8 opacity-90">Découvrez nos schémas détaillés et commencez votre projet électronique</p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
-              Télécharger les schémas
+        <section
+          className="px-6 py-16 max-w-4xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-12 rounded-3xl text-white shadow-2xl text-center">
+            <Code
+              className="w-16 h-16 mx-auto mb-6 animate-bounce"
+              style={{ animationDuration: "2s" }}
+            />
+            <h3 className="text-3xl font-bold mb-4">Prêt à coder ?</h3>
+            <p className="text-xl mb-8 opacity-90">
+              Explorez notre code source et contribuez au développement du
+              TechBot
+            </p>
+            <button className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
+              Accéder au GitHub
             </button>
           </div>
         </section>
@@ -228,4 +248,4 @@ const Electronique = () => {
   );
 };
 
-export default Electronique;
+export default IT;

@@ -1,5 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Cog, Settings, Wrench, Cpu, ChevronRight, FileText } from 'lucide-react';
+import { useEffect, useState } from "react";
+import {
+  Cog,
+  Settings,
+  Wrench,
+  Cpu,
+  ChevronRight,
+  FileText,
+} from "lucide-react";
 
 interface Section {
   id: string;
@@ -16,17 +23,20 @@ interface MecaniqueData {
 
 const Mecanique = () => {
   const [data, setData] = useState<MecaniqueData | null>(null);
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>("");
 
   // Import des données depuis le fichier JSON
   useEffect(() => {
     // Charger les données depuis le fichier JSON
-    import('../data/mecanique.json')
+    import("../../data/mecanique.json")
       .then((jsonData) => {
         setData(jsonData.default);
       })
       .catch((error) => {
-        console.error("Erreur lors du chargement des données mécaniques:", error);
+        console.error(
+          "Erreur lors du chargement des données mécaniques:",
+          error
+        );
       });
   }, []);
 
@@ -39,7 +49,7 @@ const Mecanique = () => {
     // Observer pour la navigation active
     const handleScroll = () => {
       if (!data) return;
-      
+
       const sections = data.sections;
       const scrollPosition = window.scrollY + 100;
 
@@ -48,7 +58,7 @@ const Mecanique = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section.id);
             break;
@@ -57,14 +67,14 @@ const Mecanique = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [data]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -73,7 +83,7 @@ const Mecanique = () => {
       composants: Cog,
       assemblage: Settings,
       materiaux: Wrench,
-      maintenance: Cpu
+      maintenance: Cpu,
     };
     return icons[sectionId as keyof typeof icons] || FileText;
   };
@@ -100,17 +110,23 @@ const Mecanique = () => {
 
       <div className="relative z-10 w-full">
         {/* Hero Section */}
-        <section className="px-6 py-16 max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        <section
+          className="px-6 py-16 max-w-7xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
               <Cog className="w-8 h-8 text-emerald-500 motion-preset-spin" />
-              <span className="text-lg font-semibold uppercase tracking-wider">Mécanique • Conception • Innovation</span>
+              <span className="text-lg font-semibold uppercase tracking-wider">
+                Mécanique • Conception • Innovation
+              </span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-gray-900 via-emerald-800 to-teal-800 bg-clip-text text-transparent leading-tight">
               {data.title}
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {data.description}
             </p>
@@ -128,25 +144,35 @@ const Mecanique = () => {
                     <FileText className="w-6 h-6 text-emerald-600" />
                     Sections
                   </h2>
-                  
+
                   <nav className="space-y-2">
                     {data.sections.map((section) => {
                       const IconComponent = getSectionIcon(section.id);
                       const isActive = activeSection === section.id;
-                      
+
                       return (
                         <button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
                           className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-center gap-3 group ${
-                            isActive 
-                              ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg scale-105' 
-                              : 'hover:bg-emerald-50 text-gray-700 hover:scale-102'
+                            isActive
+                              ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg scale-105"
+                              : "hover:bg-emerald-50 text-gray-700 hover:scale-102"
                           }`}
                         >
-                          <IconComponent className={`w-5 h-5 ${isActive ? 'text-white' : 'text-emerald-600'} transition-transform group-hover:scale-110`} />
+                          <IconComponent
+                            className={`w-5 h-5 ${
+                              isActive ? "text-white" : "text-emerald-600"
+                            } transition-transform group-hover:scale-110`}
+                          />
                           <span className="font-medium">{section.title}</span>
-                          <ChevronRight className={`w-4 h-4 ml-auto transition-transform ${isActive ? 'translate-x-1' : 'group-hover:translate-x-1'}`} />
+                          <ChevronRight
+                            className={`w-4 h-4 ml-auto transition-transform ${
+                              isActive
+                                ? "translate-x-1"
+                                : "group-hover:translate-x-1"
+                            }`}
+                          />
                         </button>
                       );
                     })}
@@ -160,11 +186,11 @@ const Mecanique = () => {
               <div className="space-y-8">
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
-                  
+
                   return (
-                    <div 
-                      key={section.id} 
-                      id={section.id} 
+                    <div
+                      key={section.id}
+                      id={section.id}
                       className="group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
                       data-aos="fade-up"
                       data-aos-delay={`${index * 100}`}
@@ -177,7 +203,7 @@ const Mecanique = () => {
                           {section.title}
                         </h2>
                       </div>
-                      
+
                       <div className="prose prose-lg max-w-none">
                         <p className="text-gray-700 leading-relaxed text-lg">
                           {section.content}
@@ -186,7 +212,7 @@ const Mecanique = () => {
                           {section.link}
                         </p>
                       </div>
-                      
+
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
                         <div className="w-16 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -200,11 +226,20 @@ const Mecanique = () => {
         </div>
 
         {/* Bottom Call to Action */}
-        <section className="px-6 py-16 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="250">
+        <section
+          className="px-6 py-16 max-w-4xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
           <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-12 rounded-3xl text-white shadow-2xl text-center">
-            <Cog className="w-16 h-16 mx-auto mb-6 animate-spin" style={{ animationDuration: '3s' }} />
+            <Cog
+              className="w-16 h-16 mx-auto mb-6 animate-spin"
+              style={{ animationDuration: "3s" }}
+            />
             <h3 className="text-3xl font-bold mb-4">Prêt à construire ?</h3>
-            <p className="text-xl mb-8 opacity-90">Découvrez nos guides détaillés et commencez votre projet mécanique</p>
+            <p className="text-xl mb-8 opacity-90">
+              Découvrez nos guides détaillés et commencez votre projet mécanique
+            </p>
             <button className="bg-white text-emerald-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
               Télécharger les plans
             </button>

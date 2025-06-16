@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronRight, Zap, Cog, Code, ArrowDown, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -134,13 +135,13 @@ const Home = () => {
                     {card.description}
                   </p>
                   
-                  <a
-                    href={card.href}
+                  <Link
+                    to={card.href}
                     className={`inline-flex items-center gap-2 ${card.textColor} hover:gap-3 transition-all duration-100 font-semibold group-hover:scale-105`}
                   >
                     En savoir plus
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-100" />
-                  </a>
+                  </Link>
                   
                   {/* Subtle border glow on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-opacity duration-100 -z-10`}></div>

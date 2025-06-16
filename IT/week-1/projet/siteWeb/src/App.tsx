@@ -1,21 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./App.css";
 
 // Components
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 // Pages
-import Home from './pages/Home';
-import Electronique from './pages/Electronique';
-import Mecanique from './pages/Mecanique';
-import IT from './pages/IT';
+import Home from "./pages/Home";
+import Electronique from "./pages/Electronique/Electronique";
+import Mecanique from "./pages/Mecanique/Mecanique";
+import IT from "./pages/It/IT";
 const basename = import.meta.env.DEV
-  ? '/'  // en dev local, pas de base spécifique
-  : '/2025-Team-Innovators-Docs'; // en prod GitHub Pages
+  ? "/" // en dev local, pas de base spécifique
+  : "/2025-Team-Innovators-Docs"; // en prod GitHub Pages
 function App() {
+  console.log(
+    import.meta.env.DEV
+      ? "Environnement de développement"
+      : "Environnement de production"
+  );
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -38,8 +43,7 @@ function App() {
         </main>
       </div>
     </Router>
-  )
+  );
 }
 
-
-export default App
+export default App;
