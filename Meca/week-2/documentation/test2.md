@@ -3,7 +3,7 @@
 
 ## 👤 Team
 - **Team Name**: [Innovator]
-- **Participants**: [Muriella, Nekena,Vanilla,Bobby]
+- **Participants**: [Muriella, Nekena,Vanilla]
 - **Domain**: Mechanical
 - **Week**: 1 (June 12, 2025 – June 19, 2025)
 
