@@ -23,7 +23,6 @@ Specific Operational Objectives are:
 **Density**: 0.0079 g/mm³
 
 ## Mechanical clamp assembly
-- Calculated Mass: **g**
 - SolidWorks Screenshot:
  ![Part 1](../screenshots/part1a1.png)
  ![Part 1](../screenshots/part1b2.png)
