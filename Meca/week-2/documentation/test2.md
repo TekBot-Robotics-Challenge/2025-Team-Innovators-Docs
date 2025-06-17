@@ -13,7 +13,7 @@ Specific Operational Objectives are:
 - Develop a part with **precisely calculated dimensions** to achieve the target mass from the first phase.
 - Be able **to adjust and optimize the design** during the two successive modification phases while maintaining precision.
 - Maintain the final mass of each part within **the ± 1% interval of the reference value** , which requires high precision in calculations and execution.
-- Effectively plan **the three phases** so that each modification improves or maintains compliance with specifications.
+- Effectively plan **the three phases** so that each modification improves or maintains compliance with specification.
 - **Demonstrate mastery of design and modification tools** to meet strict metric constraints.
 
 ## 🛠️ Part 1 
