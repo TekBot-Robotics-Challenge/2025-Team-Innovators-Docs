@@ -19,13 +19,14 @@ Specific Operational Objectives are:
 ## 🛠️ Part 1 
 ### ✅ Common Parameters:
 **Unit system**: MMGS (millimeter, gram, second);
-**Decimals**: 2 All holes are through holes unless otherwise indicated Material: AISI 1020 steel; **Density**: 0.0079 g/mm³
+**Decimals**: 2 All holes are through holes unless otherwise indicated Material: AISI 1020 steel; 
+**Density**: 0.0079 g/mm³
 
 ## Mechanical clamp assembly
 - Calculated Mass: **g**
 - SolidWorks Screenshot:
  ![Part 1](../screenshots/part1a1.png)
- ![Part 1](../screenshots/part1a2.png)
- ![Part 1](../screenshots/part1Final.png)
+ ![Part 1](../screenshots/part1b2.png)
+ ![Part 1](../screenshots/part1bFinal.png)
  
 
