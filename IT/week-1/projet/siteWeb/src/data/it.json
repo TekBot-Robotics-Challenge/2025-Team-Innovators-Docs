@@ -1,0 +1,14 @@
+{
+  "title": "Documentation IT",
+  "description": "Tout sur les aspects informatiques du projet TechBot",
+  "sections": [
+    {
+      "id": "Semaine 1",
+      "title": "Création d’une classe pour un Robot"
+    },
+    {
+      "id": "Semaine 2",
+      "title": "Introduction à ROS2"
+    }
+  ]
+}

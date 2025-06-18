@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/eve.tsx","./src/components/navbar.tsx","./src/pages/electronique.tsx","./src/pages/home.tsx","./src/pages/it.tsx","./src/pages/mecanique.tsx","./src/pages/semaine1.tsx","./src/types/aos.d.ts"],"version":"5.8.3"}
