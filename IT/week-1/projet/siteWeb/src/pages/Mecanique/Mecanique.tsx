@@ -20,7 +20,7 @@ interface MecaniqueData {
   description: string;
   sections: Section[];
 }
-
+import Semaine1 from "./semaine1";
 const Mecanique = () => {
   const [data, setData] = useState<MecaniqueData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
@@ -165,7 +165,7 @@ const Mecanique = () => {
                               isActive ? "text-white" : "text-emerald-600"
                             } transition-transform group-hover:scale-110`}
                           />
-                          <span className="font-medium">{section.title}</span>
+                          <span className="font-medium">{section.id}</span>
                           <ChevronRight
                             className={`w-4 h-4 ml-auto transition-transform ${
                               isActive
@@ -205,13 +205,9 @@ const Mecanique = () => {
                       </div>
 
                       <div className="prose prose-lg max-w-none">
-                        <p className="text-gray-700 leading-relaxed text-lg">
-                          {section.content}
-                        </p>
-                        <p className="text-gray-700 leading-relaxed text-lg">
-                          {section.link}
-                        </p>
-                      </div>
+                                              
+                                              <Semaine1 />
+                                            </div>
 
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
