@@ -1,5 +1,27 @@
 import { CodeViewer } from "../../components/CodeViewer";
 import { useState } from "react";
+import { 
+  BookOpen, 
+  ChevronDown, 
+  Bot, 
+  Home, 
+  Factory, 
+  Rocket, 
+  CheckCircle, 
+  Target, 
+  Wrench, 
+  TestTube, 
+  FileText,
+  Zap,
+  Settings,
+  Activity,
+  Database,
+  ArrowRight,
+  Package,
+  Shield,
+  Lightbulb,
+  ClipboardList, RefreshCw, TestTube2
+} from "lucide-react";
 
 export const TOC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,14 +32,16 @@ export const TOC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full text-left font-semibold text-gray-800 hover:text-blue-600"
       >
-        📚 Table des matières
-        <span
+        <div className="flex items-center gap-2">
+          <BookOpen size={20} />
+          Table des matières
+        </div>
+        <ChevronDown
+          size={16}
           className={`transform transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
-        >
-          ▼
-        </span>
+        />
       </button>
       {isOpen && (
         <div className="mt-4 space-y-1">
@@ -82,11 +106,15 @@ export const CodeExample = ({ title, code, description }: CodeExampleProps) => (
 
 export const ArchitectureOverview = () => (
   <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-6 my-6">
-    <h3 className="font-bold text-purple-800 mb-4">Structure du système</h3>
+    <div className="flex items-center gap-2 mb-4">
+      <Database className="text-purple-800" size={20} />
+      <h3 className="font-bold text-purple-800">Structure du système</h3>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div className="bg-white p-4 rounded-lg border border-purple-200">
-        <div className="font-semibold text-purple-700 mb-2">
-          🤖 Classe de base
+        <div className="flex items-center gap-2 font-semibold text-purple-700 mb-2">
+          <Bot size={18} />
+          Classe de base
         </div>
         <div className="text-sm text-gray-600">
           <strong>Robots</strong>
@@ -95,8 +123,9 @@ export const ArchitectureOverview = () => (
         </div>
       </div>
       <div className="bg-white p-4 rounded-lg border border-green-200">
-        <div className="font-semibold text-green-700 mb-2">
-          🏠 Robot Domestique
+        <div className="flex items-center gap-2 font-semibold text-green-700 mb-2">
+          <Home size={18} />
+          Robot Domestique
         </div>
         <div className="text-sm text-gray-600">
           <strong>RobotDomestique</strong>
@@ -105,8 +134,9 @@ export const ArchitectureOverview = () => (
         </div>
       </div>
       <div className="bg-white p-4 rounded-lg border border-orange-200">
-        <div className="font-semibold text-orange-700 mb-2">
-          🏭 Robot Industriel
+        <div className="flex items-center gap-2 font-semibold text-orange-700 mb-2">
+          <Factory size={18} />
+          Robot Industriel
         </div>
         <div className="text-sm text-gray-600">
           <strong>RobotIndustriel</strong>
@@ -159,7 +189,10 @@ export const RobotsClassDetails = () => (
 
 export const InstallationSteps = () => (
   <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
-    <h3 className="font-bold text-gray-800 mb-4">🚀 Étapes d'installation</h3>
+    <div className="flex items-center gap-2 mb-4">
+      <Rocket className="text-gray-800" size={20} />
+      <h3 className="font-bold text-gray-800">Étapes d'installation</h3>
+    </div>
     <div className="space-y-4">
       <div className="flex items-start space-x-3">
         <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
@@ -200,9 +233,10 @@ export const InstallationSteps = () => (
 
 export const UMLDiagram = () => (
   <div className="bg-white border border-gray-200 rounded-lg p-6 my-6">
-    <h3 className="font-bold text-gray-800 mb-4">
-      📊 Architecture des classes
-    </h3>
+    <div className="flex items-center gap-2 mb-4">
+      <Activity className="text-gray-800" size={20} />
+      <h3 className="font-bold text-gray-800">Architecture des classes</h3>
+    </div>
     <div className="bg-gray-50 p-4 rounded-lg font-mono text-sm">
       <div className="text-center mb-4">
         <div className="bg-blue-100 border border-blue-300 p-3 rounded inline-block">
@@ -244,9 +278,15 @@ export const UMLDiagram = () => (
             <div className="text-left text-xs space-y-1">
               <div>+ nettoyer(zone)</div>
               <div>+ ranger(zone)</div>
-              <div>+ move(x, y) ⚡</div>
-              <div>+ action_speciale() ⚡</div>
-              <div>+ travailler() ⚡</div>
+              <div className="flex items-center gap-1">
+                + move(x, y) <Zap size={10} />
+              </div>
+              <div className="flex items-center gap-1">
+                + action_speciale() <Zap size={10} />
+              </div>
+              <div className="flex items-center gap-1">
+                + travailler() <Zap size={10} />
+              </div>
             </div>
           </div>
         </div>
@@ -263,16 +303,22 @@ export const UMLDiagram = () => (
             <div className="text-left text-xs space-y-1">
               <div>+ soulever(poids)</div>
               <div>+ deposer()</div>
-              <div>+ move(x, y) ⚡</div>
-              <div>+ action_speciale() ⚡</div>
-              <div>+ travailler() ⚡</div>
+              <div className="flex items-center gap-1">
+                + move(x, y) <Zap size={10} />
+              </div>
+              <div className="flex items-center gap-1">
+                + action_speciale() <Zap size={10} />
+              </div>
+              <div className="flex items-center gap-1">
+                + travailler() <Zap size={10} />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="text-center mt-4 text-xs text-gray-600">
-        ⚡ = Méthode redéfinie (polymorphisme)
+      <div className="text-center mt-4 text-xs text-gray-600 flex items-center justify-center gap-1">
+        <Zap size={12} /> = Méthode redéfinie (polymorphisme)
       </div>
     </div>
 
@@ -298,7 +344,10 @@ export const UMLDiagram = () => (
 
 export const TestScenarios = () => (
   <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6 my-6">
-    <h3 className="font-bold text-blue-800 mb-4">🧪 Scénarios de test</h3>
+    <div className="flex items-center gap-2 mb-4">
+      <TestTube className="text-blue-800" size={20} />
+      <h3 className="font-bold text-blue-800">Scénarios de test</h3>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {[
         {
@@ -309,6 +358,7 @@ export const TestScenarios = () => (
             "Protection des attributs privés",
           ],
           color: "blue",
+          icon: Shield,
         },
         {
           title: "Test d'héritage",
@@ -318,6 +368,7 @@ export const TestScenarios = () => (
             "Constructeurs avec super()",
           ],
           color: "green",
+          icon: ArrowRight,
         },
         {
           title: "Test de polymorphisme",
@@ -327,13 +378,15 @@ export const TestScenarios = () => (
             "Comportements différenciés",
           ],
           color: "purple",
+          icon: Settings,
         },
       ].map((test, index) => (
         <div
           key={index}
           className={`bg-white p-4 rounded-lg border border-${test.color}-200`}
         >
-          <div className={`font-semibold text-${test.color}-700 mb-3`}>
+          <div className={`flex items-center gap-2 font-semibold text-${test.color}-700 mb-3`}>
+            <test.icon size={16} />
             {test.title}
           </div>
           <ul className="space-y-1 text-sm text-gray-600">
@@ -349,13 +402,17 @@ export const TestScenarios = () => (
 
 export const ProjectSummary = () => (
   <div className="bg-gradient-to-br from-green-50 to-blue-50 border border-green-200 rounded-lg p-6 my-6">
-    <h3 className="font-bold text-green-800 mb-4">🎯 Objectifs atteints</h3>
+    <div className="flex items-center gap-2 mb-4">
+      <Target className="text-green-800" size={20} />
+      <h3 className="font-bold text-green-800">Objectifs atteints</h3>
+    </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
       <div>
-        <h4 className="font-semibold text-green-700 mb-3">
-          ✅ Fonctionnalités implémentées
-        </h4>
+        <div className="flex items-center gap-2 font-semibold text-green-700 mb-3">
+          <CheckCircle size={16} />
+          Fonctionnalités implémentées
+        </div>
         <ul className="space-y-2 text-sm">
           <li className="flex items-center">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
@@ -381,9 +438,10 @@ export const ProjectSummary = () => (
       </div>
 
       <div>
-        <h4 className="font-semibold text-blue-700 mb-3">
-          🔧 Concepts POO démontrés
-        </h4>
+        <div className="flex items-center gap-2 font-semibold text-blue-700 mb-3">
+          <Wrench size={16} />
+          Concepts POO démontrés
+        </div>
         <ul className="space-y-2 text-sm">
           <li className="flex items-center">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
@@ -407,8 +465,9 @@ export const ProjectSummary = () => (
     </div>
 
     <div className="bg-white p-4 rounded-lg border border-green-200">
-      <div className="font-semibold text-green-800 mb-2">
-        🚀 Perspectives d'évolution
+      <div className="flex items-center gap-2 font-semibold text-green-800 mb-2">
+        <Lightbulb size={16} />
+        Perspectives d'évolution
       </div>
       <div className="text-sm text-green-700 space-y-1">
         <p>• Ajout de nouveaux types de robots (médical, spatial, etc.)</p>
@@ -424,17 +483,21 @@ export const ProjectSummary = () => (
 const Semaine1 = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">
-        Robot Management System 🤖
-      </h1>
+      <div className="flex items-center gap-3 mb-6">
+        <Bot size={32} className="text-blue-600" />
+        <h1 className="text-3xl font-bold text-gray-800">
+          Robot Management System
+        </h1>
+      </div>
 
       <TOC />
 
       <section id="introduction" className="mb-12">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Introduction</h2>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-4">
-          <div className="font-semibold text-blue-800 mb-2">
-            🎯 Objectifs du projet :
+          <div className="flex items-center gap-2 font-semibold text-blue-800 mb-2">
+            <Target size={16} />
+            Objectifs du projet :
           </div>
           <ul className="text-blue-700 space-y-1">
             <li>• Créer une architecture flexible de classes Robot</li>
@@ -479,9 +542,12 @@ const Semaine1 = () => {
           Description des classes
         </h2>
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-4">
-          🤖 Classe <code>Robots</code> (Classe de base)
-        </h3>
+        <div className="flex items-center gap-2 mt-6 mb-4">
+          <Bot size={20} className="text-gray-800" />
+          <h3 className="text-xl font-semibold text-gray-800">
+            Classe <code>Robots</code> (Classe de base)
+          </h3>
+        </div>
         <RobotsClassDetails />
 
         <div className="my-6">
@@ -505,9 +571,12 @@ def energie(self, valeur):
           />
         </div>
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-          🏠 Classe <code>RobotDomestique</code>
-        </h3>
+        <div className="flex items-center gap-2 mt-8 mb-4">
+          <Home size={20} className="text-gray-800" />
+          <h3 className="text-xl font-semibold text-gray-800">
+            Classe <code>RobotDomestique</code>
+          </h3>
+        </div>
         <CodeViewer
           code={`class RobotDomestique(Robots):
                         """
@@ -598,8 +667,6 @@ def energie(self, valeur):
           className="my-4"
         />
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6">
-          {/* Contenu de RobotDomestique */}
-
           <div className="text-sm text-gray-700 mt-2">
             <ul className="list-disc pl-5 space-y-1">
               <li>
@@ -627,9 +694,12 @@ def energie(self, valeur):
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-          🏭 Classe <code>RobotIndustriel</code>
-        </h3>
+        <div className="flex items-center gap-2 mt-8 mb-4">
+          <Factory size={20} className="text-gray-800" />
+          <h3 className="text-xl font-semibold text-gray-800">
+            Classe <code>RobotIndustriel</code>
+          </h3>
+        </div>
         <CodeViewer
           code={`class RobotIndustriel(Robots):
                 """
@@ -757,35 +827,36 @@ def energie(self, valeur):
         </div>
       </section>
 
-      <section id="installation" className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Installation et utilisation
-        </h2>
-        <InstallationSteps />
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-          📋 Dépendances
-        </h3>
-        <p>Le projet utilise uniquement des modules Python standard :</p>
-        <ul className="list-disc pl-5 mt-2">
-          <li>
-            <code>random</code> : Pour la génération de valeurs aléatoires dans
-            les tâches
-          </li>
-        </ul>
-      </section>
+<section id="installation" className="mb-12">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    Installation et utilisation
+  </h2>
+  <InstallationSteps />
 
-    <section id="exemples" className="mb-12">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">
-        Exemples d'utilisation
-      </h2>
+  <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4 flex items-center gap-2">
+    <ClipboardList className="w-5 h-5" /> Dépendances
+  </h3>
+  <p>Le projet utilise uniquement des modules Python standard :</p>
+  <ul className="list-disc pl-5 mt-2">
+    <li>
+      <code>random</code> : Pour la génération de valeurs aléatoires dans
+      les tâches
+    </li>
+  </ul>
+</section>
 
-      <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-4">
-        🤖 Utilisation basique - Robot générique
-      </h3>
-      <CodeViewer
-        language="python"
-        code={`# Création d'un robot de base
+<section id="exemples" className="mb-12">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    Exemples d'utilisation
+  </h2>
+
+  <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-4 flex items-center gap-2">
+    <Bot className="w-5 h-5" /> Utilisation basique - Robot générique
+  </h3>
+  <CodeViewer
+    language="python"
+    code={`# Création d'un robot de base
 robot1 = Robots("R2D2", "bleu")
 
 # Affichage de l'état initial
@@ -801,15 +872,15 @@ print(f"Énergie restante: {robot1.energie}%")
 # Recharge
 robot1.recharger()
 robot1.show()`}
-        className="my-4"
-      />
+    className="my-4"
+  />
 
-      <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-        🏠 Robot Domestique
-      </h3>
-      <CodeViewer
-        language="python"
-        code={`# Création d'un robot domestique
+  <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4 flex items-center gap-2">
+    <Home className="w-5 h-5" /> Robot Domestique
+  </h3>
+  <CodeViewer
+    language="python"
+    code={`# Création d'un robot domestique
 robot_maison = RobotDomestique(
     "HomeBot", 
     "blanc", 
@@ -828,15 +899,15 @@ robot_maison.travailler()
 
 # Vérification des tâches effectuées
 print(f"Tâches réalisées: {len(robot_maison.taches_effectuees)}")`}
-        className="my-4"
-      />
+    className="my-4"
+  />
 
-      <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-        🏭 Robot Industriel
-      </h3>
-      <CodeViewer
-        language="python"
-        code={`# Création d'un robot industriel
+  <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4 flex items-center gap-2">
+    <Factory className="w-5 h-5" /> Robot Industriel
+  </h3>
+  <CodeViewer
+    language="python"
+    code={`# Création d'un robot industriel
 robot_usine = RobotIndustriel("IndustryBot", "jaune", 100)
 
 # Affichage des spécifications
@@ -852,15 +923,15 @@ robot_usine.travailler()
 
 # Vérification de la capacité
 print(f"Capacité: {robot_usine.capacite_charge} kg")`}
-        className="my-4"
-      />
+    className="my-4"
+  />
 
-      <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-        🔄 Démonstration du polymorphisme
-      </h3>
-      <CodeViewer
-        language="python"
-        code={`robots = [
+  <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4 flex items-center gap-2">
+    <RefreshCw className="w-5 h-5" /> Démonstration du polymorphisme
+  </h3>
+  <CodeViewer
+    language="python"
+    code={`robots = [
     Robots("BasicBot", "gris"),
     RobotDomestique("CleanBot", "blanc", ["nettoyage"]),
     RobotIndustriel("PowerBot", "rouge", 150)
@@ -870,24 +941,26 @@ print(f"Capacité: {robot_usine.capacite_charge} kg")`}
 for robot in robots:
     print(f"\\n--- Déplacement de {robot.nom} ---")
     robot.move(5, 5)  # Polymorphisme en action !`}
-        className="my-4"
-      />
-    </section>
+    className="my-4"
+  />
+</section>
 
-      <section id="uml" className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Diagramme UML</h2>
-        <UMLDiagram />
-      </section>
+<section id="uml" className="mb-12">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+    <FileText className="w-5 h-5" /> Diagramme UML
+  </h2>
+  <UMLDiagram />
+</section>
 
-      <section id="tests" className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Tests et validation
-        </h2>
-        <TestScenarios />
+<section id="tests" className="mb-12">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    Tests et validation
+  </h2>
+  <TestScenarios />
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-          ✅ Script de test complet
-        </h3>
+  <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4 flex items-center gap-2">
+    <TestTube2 className="w-5 h-5" /> Script de test complet
+  </h3>
         <CodeViewer
           language="python"
           code={`def test_robot_system():
@@ -933,9 +1006,12 @@ if __name__ == "__main__":
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Conclusion</h2>
         <ProjectSummary />
 
-        <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
-          📁 Structure du projet
-        </h3>
+        <div className="flex items-center gap-2 mt-8 mb-4">
+          <Package size={20} className="text-gray-800" />
+          <h3 className="text-xl font-semibold text-gray-800">
+            Structure du projet
+          </h3>
+        </div>
         <CodeViewer
           language="text"
           code={`robot-management-system/

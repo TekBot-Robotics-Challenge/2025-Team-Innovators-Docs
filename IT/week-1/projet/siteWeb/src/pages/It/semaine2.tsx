@@ -1,4 +1,6 @@
 import { CodeViewer } from "../../components/CodeViewer";
+import { Satellite, FlaskConical as Flask, Folder, Wrench, Rocket, Brain, BarChart, Box } from 'lucide-react';
+
 
 const ROS2Documentation = () => {
     const projectStructure = `sensor_data_evaluation/
@@ -30,12 +32,12 @@ source install/setup.bash`;
     return (
         <div className="max-w-4xl mx-auto p-6 space-y-6">
             <h1 className="text-3xl font-bold text-blue-600 flex items-center gap-2">
-                📡 ROS 2 - Test de Validation de Données Capteurs
+                <Satellite className="w-6 h-6" /> ROS 2 - Test de Validation de Données Capteurs
             </h1>
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    🧪 Projet : <code className="font-mono bg-gray-100 px-2 py-1 rounded">sensor_data_evaluation</code>
+                    <Flask className="w-5 h-5" /> Projet : <code className="font-mono bg-gray-100 px-2 py-1 rounded">sensor_data_evaluation</code>
                 </h2>
                 <p className="text-gray-700">
                     Ce projet ROS 2 simule l'envoi de données de capteurs (température, humidité, pression) via un <strong>publisher</strong>, et leur vérification via un <strong>subscriber</strong>. Il est conçu pour valider si les données reçues sont dans des plages acceptables.
@@ -44,7 +46,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    📂 Structure du projet
+                    <Folder className="w-5 h-5" /> Structure du projet
                 </h2>
                 <CodeViewer 
                     code={projectStructure} 
@@ -56,7 +58,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    🔧 Installation
+                    <Wrench className="w-5 h-5" /> Installation
                 </h2>
                 <h3 className="text-lg font-medium mb-2">1. Créer l'espace de travail</h3>
                 <CodeViewer 
@@ -68,7 +70,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    🚀 Lancement du projet
+                    <Rocket className="w-5 h-5" /> Lancement du projet
                 </h2>
                 <CodeViewer 
                     code={launchCommand} 
@@ -87,7 +89,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    🧠 Fonctionnement
+                    <Brain className="w-5 h-5" /> Fonctionnement
                 </h2>
                 
                 <h3 className="text-lg font-medium mb-2">Publisher (<code>publisher_node.py</code>)</h3>
@@ -108,7 +110,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    📊 Exemple de sortie console
+                    <BarChart className="w-5 h-5" /> Exemple de sortie console
                 </h2>
                 <CodeViewer 
                     code={exampleOutput} 
@@ -119,7 +121,7 @@ source install/setup.bash`;
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    🧰 Dépendances principales
+                    <Box className="w-5 h-5" /> Dépendances principales
                 </h2>
                 <ul className="list-disc pl-6 text-gray-700 space-y-1">
                     <li><code>rclpy</code></li>
