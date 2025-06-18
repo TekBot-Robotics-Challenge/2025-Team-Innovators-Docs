@@ -178,42 +178,42 @@ const IT = () => {
             </div>
 
             {/* Content Sections */}
-<div className="lg:col-span-3">
-  <div className="space-y-8">
-    {data.sections.map((section, index) => {
-      const IconComponent = getSectionIcon(section.id);
-      const SemaineComponent = semaineComponents[index]; // Utilisez la solution 2
+            <div className="lg:col-span-3">
+              <div className="space-y-8">
+                {data.sections.map((section, index) => {
+                  const IconComponent = getSectionIcon(section.id);
+                  const SemaineComponent = semaineComponents[index]; // Utilisez la solution 2
 
-      return (
-        <div
-          key={section.id}
-          id={section.id}
-          className="group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-          data-aos="fade-up"
-          data-aos-delay={`${index * 100}`}
-        >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <IconComponent className="w-6 h-6 text-white" />
+                  return (
+                    <div
+                      key={section.id}
+                      id={section.id}
+                      className="group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                      data-aos="fade-up"
+                      data-aos-delay={`${index * 100}`}
+                    >
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-purple-700 group-hover:text-purple-600 transition-colors duration-300">
+                          {section.title}
+                        </h2>
+                      </div>
+
+                      <div className="prose prose-lg max-w-none">
+                        {SemaineComponent && <SemaineComponent />}
+                      </div>
+
+                      {/* Decorative elements */}
+                      <div className="mt-8 flex justify-end">
+                        <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <h2 className="text-3xl font-bold text-purple-700 group-hover:text-purple-600 transition-colors duration-300">
-              {section.title}
-            </h2>
-          </div>
-
-          <div className="prose prose-lg max-w-none">
-            {SemaineComponent && <SemaineComponent />}
-          </div>
-
-          {/* Decorative elements */}
-          <div className="mt-8 flex justify-end">
-            <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-</div>
           </div>
         </div>
 
@@ -233,9 +233,14 @@ const IT = () => {
               Explorez notre code source et contribuez au développement du
               TechBot
             </p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
+            <a
+              href="https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/60959036d06356c1894f87237db5ecdf9c0bf9b1/IT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg inline-block"
+            >
               Accéder au GitHub
-            </button>
+            </a>
           </div>
         </section>
       </div>
