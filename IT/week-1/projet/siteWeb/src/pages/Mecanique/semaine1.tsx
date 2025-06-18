@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { useCallback } from "react";
+import './style.css';
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -116,68 +117,142 @@ export const TableOfContents = () => {
   );
 };
 
-export const ResourceLinks = () => {
-  const resources = [
+
+
+// Interface pour typer les ressources
+
+type FileItem = {
+  name: string;
+  file: string;
+  type: "code" | "schematic" | "document" | "media";
+  url: string; // Ajout d'une URL pour le téléchargement/consultation
+};
+
+export const FileLinks = () => {
+  const files: FileItem[] = [
     {
-      title: "Pièce1.SLDPRT",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/Piece1.SLDPRT",
+      name: "Pièce 1",
+      file: "piece 1.pdf",
+      type: "document",
+      url: "/output/piece 1.pdf",
     },
     {
-      title: "Pièce2.SLDPRT",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/Piece2.SLDPRT",
+      name: "Pièce 2",
+      file: "piece 2.pdf",
+      type: "document",
+      url: "/output/piece 2.pdf",
     },
     {
-      title: "Pièce3.SLDPRT",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/piece3.SLDPRT",
+      name: "massePiece3",
+      file: "massePiece3.pdf",
+      type: "document",
+      url: "/output/massePiece3.pdf",
     },
-    { title: "Pièce4.SLDPRT", url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/piece4.SLDPRT" },
-    {
-      title: "Assemblage pince.SLDASM",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/assemblage%20pince.SLDASM",
-    },
-    {
-      title: "piece 1.pdf",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/piece%201.pdf",
-    },
-    {
-      title: "piece 2.pdf",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/piece%202.pdf",
+     {
+      name: "massePiece4",
+      file: "massePiece4.pdf",
+      type: "document",
+      url: "/output/massePiece4.pdf",
     },
     {
-      title: "pincePositionMax.pdf",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/pincePositionMax.pdf",
+      name: "pincePositionMax",
+      file: "pincePositionMax.pdf",
+      type: "document",
+      url: "/output/pincePositionMax.pdf",
     },
     {
-      title: "massePiece3.pdf",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/massePiece3.pdf",
+      name: "Assemblage pince",
+      file: "assemblage pince.SLDASM",
+      type: "document",
+      url: "/output/assemblage pince.SLDASM",
     },
     {
-      title: "massePiece4.pdf",
-      url: "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Meca/week-1/output/massePiece4.pdf",
+      name: "Pièce 1",
+      file: "Piece1.SLDPRT",
+      type: "document",
+      url: "/output/Piece1.SLDPRT",
+    },
+    {
+      name: "Pièce 2",
+      file: "Piece2.SLDPRT",
+      type: "document",
+      url: "/output/Piece2.SLDPRT",
+    },
+    {
+      name: "Pièce 3",
+      file: "Piece3.SLDPRT",
+      type: "document",
+      url: "/output/Piece3.SLDPRT",
+    },
+    {
+      name: "Pièce 4",
+      file: "Piece4.SLDPRT",
+      type: "document",
+      url: "/output/Piece4.SLDPRT",
     },
   ];
+
+  const handleFileOpen = useCallback((file: FileItem) => {
+    // Stratégie d'ouverture selon le type de fichier
+    if (file.type === "document" || file.type === "media") {
+      // Ouverture dans un nouvel onglet pour les PDF et médias
+      window.open(file.url, "_blank");
+    } else {
+      // Téléchargement pour les autres types
+      const link = document.createElement("a");
+      link.href = file.url;
+      link.download = file.file;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, []);
+
+  const getTypeClasses = (type: FileItem["type"]) => {
+    const classes = {
+      code: "bg-blue-100 text-blue-700",
+      schematic: "bg-green-100 text-green-700",
+      document: "bg-red-100 text-red-700",
+      media: "bg-purple-100 text-purple-700",
+    };
+    return classes[type] || "bg-gray-100 text-gray-700";
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-6">
-      {resources.map((resource, index) => (
-        <a
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      {files.map((item, index) => (
+        <div
           key={index}
-          href={resource.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center p-3 bg-white border border-gray-200 rounded-lg hover:shadow-md hover:border-blue-300 transition-all group"
+          onClick={() => handleFileOpen(item)}
+          className={`
+            bg-white border border-gray-200 rounded-lg p-4 
+            hover:shadow-md transition-all cursor-pointer
+            hover:border-blue-300 active:scale-[0.98]
+          `}
         >
-          <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
-            <span className="text-blue-600 text-sm">🔗</span>
-          </div>
-          <div className="flex-1">
-            <div className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
-              {resource.title}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center truncate">
+              {/* Vos icônes existantes ici */}
+              <div className="truncate">
+                <div className="font-medium text-gray-800 truncate">
+                  {item.name}
+                </div>
+                <div className="text-sm text-gray-500 truncate">
+                  {item.file}
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center ml-2">
+              <span
+                className={`px-2 py-1 rounded text-xs font-medium ${getTypeClasses(
+                  item.type
+                )}`}
+              >
+                {item.type}
+              </span>
             </div>
           </div>
-          <span className="text-gray-400 group-hover:text-blue-400 transition-colors">
-            →
-          </span>
-        </a>
+        </div>
       ))}
     </div>
   );
@@ -395,7 +470,7 @@ Z : 1322,70 mm  <br />
       Notes Personnelles
       </h2> 
       <p>
-       - L'installation de SolidWorks a causé un léger retard.
+       - L'installation de SolidWorks a causé un léger retard. <br />
 -Le test a aidé à renforcer notre maîtrise des bases de SolidWorks (extrusion, assemblage, contraintes). <br />
 -Le concept de symétrie mécanique a nécessité l'utilisation d'un plan de référence central. <br />
 -Une attention particulière a été portée à la sélection des matériaux pour assurer des calculs de masse réalistes. <br />
@@ -406,7 +481,7 @@ Z : 1322,70 mm  <br />
       >
      Fichiers Joints au Dépôt GitHub
       </h2> 
-       <ResourceLinks />
+       <FileLinks />
      </div>
 
     );       
