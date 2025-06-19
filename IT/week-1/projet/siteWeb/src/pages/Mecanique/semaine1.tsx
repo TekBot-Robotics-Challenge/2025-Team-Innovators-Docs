@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useCallback } from "react";
 import './style.css';
+import { File } from "lucide-react";
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -212,7 +213,7 @@ export const FileLinks = () => {
     const classes = {
       code: "bg-blue-100 text-blue-700",
       schematic: "bg-green-100 text-green-700",
-      document: "bg-red-100 text-red-700",
+      document: "bg-lime-100 text-lime-700",
       media: "bg-purple-100 text-purple-700",
     };
     return classes[type] || "bg-gray-100 text-gray-700";
@@ -248,7 +249,7 @@ export const FileLinks = () => {
                   item.type
                 )}`}
               >
-                {item.type}
+                <File />
               </span>
             </div>
           </div>
