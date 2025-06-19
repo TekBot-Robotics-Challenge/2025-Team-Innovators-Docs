@@ -228,7 +228,7 @@ export const FileLinks = () => {
           className={`
             bg-white border border-gray-200 rounded-lg p-4 
             hover:shadow-md transition-all cursor-pointer
-            hover:border-blue-300 active:scale-[0.98]
+            hover:border-yellow-700 active:scale-[0.98]
           `}
         >
           <div className="flex items-center justify-between">
