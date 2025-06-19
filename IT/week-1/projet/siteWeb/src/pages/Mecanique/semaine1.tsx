@@ -170,25 +170,25 @@ export const FileLinks = () => {
       name: "Pièce 1",
       file: "Piece1.SLDPRT",
       type: "document",
-      url: "/2025-Team-Innovators-Docs/output/Piece1.SLDPRT",
+      url: "/output/Piece1.SLDPRT",
     },
     {
       name: "Pièce 2",
       file: "Piece2.SLDPRT",
       type: "document",
-      url: "/2025-Team-Innovators-Docs/output/Piece2.SLDPRT",
+      url: "/output/Piece2.SLDPRT",
     },
     {
       name: "Pièce 3",
       file: "Piece3.SLDPRT",
       type: "document",
-      url: "/2025-Team-Innovators-Docs/output/Piece3.SLDPRT",
+      url: "/output/Piece3.SLDPRT",
     },
     {
       name: "Pièce 4",
       file: "Piece4.SLDPRT",
       type: "document",
-      url: "/2025-Team-Innovators-Docs/output/Piece4.SLDPRT",
+      url: "/output/Piece4.SLDPRT",
     },
   ];
 
