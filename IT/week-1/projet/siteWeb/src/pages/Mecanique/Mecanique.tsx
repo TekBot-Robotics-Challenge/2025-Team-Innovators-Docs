@@ -20,7 +20,8 @@ interface MecaniqueData {
   description: string;
   sections: Section[];
 }
-import Semaine1 from "./semaine1";
+import Liste from "./components/Liste";
+
 const Mecanique = () => {
   const [data, setData] = useState<MecaniqueData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
@@ -149,7 +150,7 @@ const Mecanique = () => {
                     {data.sections.map((section) => {
                       const IconComponent = getSectionIcon(section.id);
                       const isActive = activeSection === section.id;
-
+                      
                       return (
                         <button
                           key={section.id}
@@ -186,7 +187,7 @@ const Mecanique = () => {
               <div className="space-y-8">
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
-
+                   const Listes = Liste[index];
                   return (
                     <div
                       key={section.id}
@@ -206,8 +207,10 @@ const Mecanique = () => {
 
                       <div className="prose prose-lg max-w-none">
                                               
-                                              <Semaine1 />
+                                               {Listes && <Listes />}
+                                               
                                             </div>
+                                            
 
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">

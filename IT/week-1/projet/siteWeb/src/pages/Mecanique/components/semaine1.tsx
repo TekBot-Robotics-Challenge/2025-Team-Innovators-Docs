@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCallback } from "react";
-import './style.css';
+import '../style.css';
 import { File } from "lucide-react";
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -260,21 +260,21 @@ export const FileLinks = () => {
 };
 
 
-import Pièce1 from "./screenshots/piece1.png";
-import Pièce1Final from "./screenshots/piece1final.png";
-import Pièce2 from "./screenshots/piece2.png";
-import Pièce2Final from "./screenshots/piece2final.png";
-import Piece3step1 from "./screenshots/piece3step1.png";
-import Piece3step2 from "./screenshots/piece3step2.png";
-import Piece3step3 from "./screenshots/piece3step3.png";
-import Piece3step4 from "./screenshots/piece3Final.png";
-import Piece4step1 from "./screenshots/pice4step1.png";
-import Piece4step2 from "./screenshots/piece4step2.png";
-import Piece4step3 from "./screenshots/piece4step3.png";
-import Piece4step4 from "./screenshots/piece4Final.png";
-import assemblage from "./screenshots/assemblage1.png";
-import pincePositionMinimal from "./screenshots/pincePositionMinimal.png";
-import pincePositionMaximal from "./screenshots/pincePositionMaximal.png";
+import Pièce1 from "../screenshots/piece1.png";
+import Pièce1Final from "../screenshots/piece1final.png";
+import Pièce2 from "../screenshots/piece2.png";
+import Pièce2Final from "../screenshots/piece2final.png";
+import Piece3step1 from "../screenshots/piece3step1.png";
+import Piece3step2 from "../screenshots/piece3step2.png";
+import Piece3step3 from "../screenshots/piece3step3.png";
+import Piece3step4 from "../screenshots/piece3Final.png";
+import Piece4step1 from "../screenshots/pice4step1.png";
+import Piece4step2 from "../screenshots/piece4step2.png";
+import Piece4step3 from "../screenshots/piece4step3.png";
+import Piece4step4 from "../screenshots/piece4Final.png";
+import assemblage from "../screenshots/assemblage1.png";
+import pincePositionMinimal from "../screenshots/pincePositionMinimal.png";
+import pincePositionMaximal from "../screenshots/pincePositionMaximal.png";
 
 
 export default function Semaine1() {
@@ -299,7 +299,7 @@ export default function Semaine1() {
       >
         Objectif du Test
       </h2>
-      <p>
+      <p className="box-border border-2 border-dashed p-2 bg-blue-800 text-white border-blue-800">
         <b>Concevoir</b> et <b>assembler</b> les pièces mécaniques simples fournies dans le défi afin de : <br /> <br />
 
 -Valider la modélisation 3D de pièces à partir de croquis techniques. <br />
