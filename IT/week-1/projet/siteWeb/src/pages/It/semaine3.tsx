@@ -171,7 +171,20 @@ rviz2`;
                         <li>Le tout est visible sur Gazebo et RViz2</li>
                     </ul>
                 </div>
+
+                <div className="mt-6">
+                    <video 
+                        width="100%" 
+                        className="rounded-lg shadow-md border"
+                        autoPlay
+                        loop
+                    >
+                        <source src="/Gazebo.mp4" type="video/mp4" />
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
             </div>
+
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
