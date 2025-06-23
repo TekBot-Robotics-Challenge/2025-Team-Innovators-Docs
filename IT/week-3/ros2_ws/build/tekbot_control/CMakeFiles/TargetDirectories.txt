@@ -1,0 +1,9 @@
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/uninstall.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/tekbot_control_uninstall.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/test.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/edit_cache.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/rebuild_cache.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/list_install_components.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/install.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/install/local.dir
+/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control/CMakeFiles/install/strip.dir
