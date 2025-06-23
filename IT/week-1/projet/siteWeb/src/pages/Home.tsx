@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronRight, Zap, Cog, Code, ArrowDown, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,30 +78,35 @@ const Home = () => {
 
         {/* About Section */}
         <section className="mb-20 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              À propos du projet
-            </h2>
-            
-            <div className="bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20 hover:shadow-3xl transition-all duration-100 hover:scale-[1.02]">
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p className="text-xl font-medium text-gray-800">
-                  Le projet TechBot est une initiative multidisciplinaire révolutionnaire qui fusionne harmonieusement électronique, mécanique et informatique pour créer une solution robotique d'avant-garde.
-                </p>
-                <p>
-                  Cette documentation interactive est conçue pour accompagner les membres de l'équipe et inspirer les nouveaux contributeurs à explorer et comprendre chaque facette innovante de notre projet technologique.
-                </p>
-              </div>
-              
-              <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Robotique</span>
-                <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Innovation</span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Multidisciplinaire</span>
-                <span className="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">Open Source</span>
-              </div>
-            </div>
-          </div>
-        </section>
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+      Notre Équipe Innovator
+    </h2>
+    
+    <div className="bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20 hover:shadow-3xl transition-all duration-100 hover:scale-[1.02]">
+      <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+        <p className="text-xl font-medium text-gray-800">
+          Nous sommes <span className="font-bold text-blue-600">Innovator</span>, l'équipe technologique d'excellence de l'EMIT (École de Management et Innovation Technologique) de l'Université de Fianarantsoa, fière représentante de Madagascar.
+        </p>
+        
+        <p>
+          Notre équipe multidisciplinaire allie expertise technique et vision innovante pour développer des solutions robotiques avancées. Le projet TechBot incarne notre philosophie : fusionner électronique, mécanique et informatique pour repousser les limites de l'innovation.
+        </p>
+        
+        <p>
+          À travers cette documentation, nous partageons notre parcours, nos réalisations et notre passion pour la technologie, tout en inspirant la prochaine génération d'innovateurs malgaches.
+        </p>
+      </div>
+      
+      <div className="mt-8 flex flex-wrap gap-4 justify-center">
+        <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">EMIT Fianarantsoa</span>
+        <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Représentants Madagascar</span>
+        <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Excellence Technologique</span>
+        <span className="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">Esprit d'Innovation</span>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Cards Section */}
         <section className="mb-16 max-w-7xl mx-auto">
@@ -134,13 +140,13 @@ const Home = () => {
                     {card.description}
                   </p>
                   
-                  <a
-                    href={card.href}
+                  <Link
+                    to={card.href}
                     className={`inline-flex items-center gap-2 ${card.textColor} hover:gap-3 transition-all duration-100 font-semibold group-hover:scale-105`}
                   >
                     En savoir plus
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-100" />
-                  </a>
+                  </Link>
                   
                   {/* Subtle border glow on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-opacity duration-100 -z-10`}></div>

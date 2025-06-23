@@ -6,16 +6,19 @@
   "homepage": "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc --noEmit && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
     "@tailwindcss/vite": "^4.1.8",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.177.0",
     "aos": "^2.3.4",
     "gsap": "^3.13.0",
@@ -24,6 +27,7 @@
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.6.2",
+    "react-syntax-highlighter": "^15.6.1",
     "tailwindcss": "^4.1.8",
     "three": "^0.177.0",
     "three-stdlib": "^2.36.0"

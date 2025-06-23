@@ -3,16 +3,12 @@
   "description": "Tout sur les aspects informatiques du projet TechBot",
   "sections": [
     {
-      "id": "SiteWeb",
-      "title": "Site Web de Documentation Innovator",
-      "content": "Il s'agit du site web de documentation pour le projet Innovator, qui fournit des informations détaillées sur les fonctionnalités, les API et les guides d'utilisation.",
-      "link": "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/"
+      "id": "Semaine 1",
+      "title": "Création d’une classe pour un Robot"
     },
     {
-      "id": "Classe",
-      "title": "Création d’une classe pour un Robot",
-      "content": "Cette section explique comment créer une classe pour représenter un robot dans le projet Innovator. Elle couvre les attributs et méthodes essentiels pour modéliser le comportement du robot.",
-      "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/IT/projet/Test%201"
+      "id": "Semaine 2",
+      "title": "Introduction à ROS2"
     }
   ]
 }

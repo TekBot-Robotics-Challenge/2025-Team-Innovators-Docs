@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Zap, Cog, Code, Home, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,9 +86,9 @@ const Navbar = () => {
             {navigation.map((item) => {
               const IconComponent = item.icon;
               return (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="group relative px-6 py-3 rounded-2xl transition-all duration-300 hover:scale-105"
                 >
                   {/* Gradient background on hover */}
@@ -102,7 +103,7 @@ const Navbar = () => {
                   
                   {/* Animated underline */}
                   <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r ${item.color} group-hover:w-3/4 transition-all duration-300 rounded-full`}></div>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -128,9 +129,10 @@ const Navbar = () => {
             {navigation.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to
+                  ={item.href}
                   onClick={() => setIsOpen(false)}
                   className="group flex items-center gap-3 p-4 rounded-xl hover:bg-gray-700/50 transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -142,7 +144,7 @@ const Navbar = () => {
                     {item.name}
                   </span>
                   <ChevronDown className="w-4 h-4 text-gray-400 ml-auto transform -rotate-90 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
+                </Link>
               );
             })}
           </div>
