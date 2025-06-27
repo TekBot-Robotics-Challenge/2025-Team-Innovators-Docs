@@ -29,6 +29,7 @@ interface MecaniqueData {
   description: string;
   sections: Section[];
 }
+
 import Liste from "./components/Liste";
 
 const Mecanique = () => {
@@ -286,7 +287,7 @@ const Mecanique = () => {
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
                   const isActive = activeSection === section.id;
-                  const Listes = Liste[index];
+                  const SemaineComponent = Liste[index]; // Utilisez le composant semaine correspondant
 
                   return (
                     <div
@@ -312,7 +313,7 @@ const Mecanique = () => {
                       </div>
 
                       <div className="prose prose-lg max-w-none">
-                        {Listes && <Listes />}
+                        {SemaineComponent && <SemaineComponent />}
                       </div>
 
                       {/* Decorative elements */}

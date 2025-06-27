@@ -7,6 +7,12 @@
       "title": "Test Mécanique Débutant | TRC 2025",
       "content": "Cette section détaille la structure physique du TechBot, y compris le châssis et les supports pour les différents composants.",
       "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/Meca/week-1/documentation/test1.md"
+    },
+    {
+      "id": "Semaine 2",
+      "title": "Intermediate Mechanical Test | TRC 2025",
+      "content": "Cette évaluation porte sur la modélisation et l'assemblage de composants mécaniques de niveau intermédiaire..",
+      "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/Meca/week-2/documentation/test2.md"
     }
     
   ]
