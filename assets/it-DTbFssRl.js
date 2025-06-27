@@ -1,0 +1,1 @@
+const t="Documentation IT",e="Tout sur les aspects informatiques du projet TechBot",i=[{id:"Semaine 1",title:"Création d’une classe pour un Robot"},{id:"Semaine 2",title:"Introduction à ROS2"},{id:"Semaine 3",title:"Création d'un Algorithme de Pathfinding"}],n={title:t,description:e,sections:i};export{n as default,e as description,i as sections,t as title};
