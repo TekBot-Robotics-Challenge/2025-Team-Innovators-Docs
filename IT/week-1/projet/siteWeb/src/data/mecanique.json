@@ -13,6 +13,13 @@
       "title": "Intermediate Mechanical Test | TRC 2025",
       "content": "Cette évaluation porte sur la modélisation et l'assemblage de composants mécaniques de niveau intermédiaire..",
       "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/Meca/week-2/documentation/test2.md"
+    },
+    {
+
+      "id": "Semaine 3",
+       "title": "Advanced Mechanical Test | TRC 2025",
+       "content": "Cette section couvre les aspects avancés de la mécanique du TechBot, y compris les systèmes de transmission et les mécanismes complexes.",
+       "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/tree/main/Meca/week-2/documentation/test3.md"
     }
     
   ]

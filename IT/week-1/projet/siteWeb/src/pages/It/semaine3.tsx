@@ -179,6 +179,7 @@ rviz2`;
                         className="rounded-lg shadow-md border"
                         autoPlay
                         loop
+                        controls
                     >
                         <source src={Gazebo} type="video/mp4" />
                         Votre navigateur ne supporte pas la lecture de vidéos.
