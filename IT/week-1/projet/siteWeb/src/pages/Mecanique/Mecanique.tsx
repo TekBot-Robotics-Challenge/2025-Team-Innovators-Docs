@@ -31,11 +31,12 @@ interface MecaniqueData {
 }
 
 import Liste from "./components/Liste";
+import type { CSSProperties } from "react";
 
 const Mecanique = () => {
   const [data, setData] = useState<MecaniqueData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
-  const [sidebarStyle, setSidebarStyle] = useState<{ position: string; top?: string; bottom?: string }>({
+  const [sidebarStyle, setSidebarStyle] = useState<CSSProperties>({
     position: "sticky"
   });
   
