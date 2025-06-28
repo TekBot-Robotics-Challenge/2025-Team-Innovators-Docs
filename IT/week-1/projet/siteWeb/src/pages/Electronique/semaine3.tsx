@@ -81,33 +81,20 @@ type FileItem = {
 
 export const FileLinks = () => {
   const files: FileItem[] = [
+
     {
-      name: "Code Principal Minuteur",
-      file: "minuteur_principal.ino",
-      type: "code",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/semaine3/minuteur_principal.ino",
-      description: "Code Arduino pour le minuteur avec affichage LCD et boutons"
-    },
-    {
-      name: "Schéma Circuit Minuteur",
-      file: "minuteur_circuit.kicad_sch",
-      type: "schematic",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/semaine3/minuteur_circuit.kicad_sch",
-      description: "Schéma électronique du minuteur"
-    },
-    {
-      name: "Documentation Technique",
-      file: "minuteur_documentation.pdf",
+      name: "Documentation afficheur 7 servo",
+      file: "Afficheur7Servos.pdf",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/semaine3/minuteur_documentation.pdf",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Afficheur7Servos.pdf",
       description: "Documentation complète du minuteur"
     },
     {
-      name: "Photos du Prototype",
-      file: "minuteur_photos.zip",
+      name: "Fichier Afficheur 7 Servos",
+      file: "Afficheur7Servos.zip",
       type: "media",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/semaine3/minuteur_photos.zip",
-      description: "Photos du minuteur en fonctionnement"
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Afficheur7Servos.zip",
+      description: "Fichier compressé contenant les ressources du minuteur"
     }
   ];
 
