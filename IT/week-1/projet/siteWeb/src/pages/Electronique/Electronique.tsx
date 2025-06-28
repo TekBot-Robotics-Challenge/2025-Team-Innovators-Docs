@@ -7,7 +7,8 @@ import {
   ChevronRight,
   FileText,
 } from "lucide-react";
-import Semaine1 from "./semaine1";
+import semaineComponents from "./semaineComponents";
+
 // import Semaine1 from './semaine1.mdx'
 
 // Extend the Window interface to include AOS
@@ -282,10 +283,12 @@ const Electronique = () => {
             </div>
 
             {/* Content Sections */}
+            {/* Content Sections */}
             <div ref={contentRef} className="lg:col-span-3">
               <div className="space-y-8">
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
+                  const SemaineComponent = semaineComponents[index]; // Utilisez la solution 2
                   const isActive = activeSection === section.id;
 
                   return (
@@ -293,38 +296,37 @@ const Electronique = () => {
                       key={section.id}
                       id={section.id}
                       className={`group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] scroll-mt-24 ${
-                        isActive ? "ring-2 ring-blue-300 shadow-2xl scale-[1.01]" : ""
+                        isActive ? "ring-2 ring-purple-300 shadow-2xl scale-[1.01]" : ""
                       }`}
-                      data-aos="fade-up"
-                      data-aos-delay={`${index * 100}`}
+                      
                     >
                       <div className="flex items-center gap-4 mb-6">
-                        <div className={`w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
+                        <div className={`w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
                           isActive ? "animate-pulse shadow-lg" : ""
                         }`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
-                        <h2 className={`text-3xl font-bold text-blue-700 group-hover:text-blue-600 transition-colors duration-300 ${
-                          isActive ? "text-blue-600" : ""
+                        <h2 className={`text-3xl font-bold text-purple-700 group-hover:text-purple-600 transition-colors duration-300 ${
+                          isActive ? "text-purple-600" : ""
                         }`}>
                           {section.title}
                         </h2>
                       </div>
 
                       <div className="prose prose-lg max-w-none">
-                        <Semaine1 />
+                        {SemaineComponent && <SemaineComponent />}
                       </div>
 
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
-                        <div className={`w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300 ${
+                        <div className={`w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300 ${
                           isActive ? "w-32 opacity-100" : ""
                         }`}></div>
                       </div>
 
                       {/* Section number */}
-                      <div className="absolute top-6 right-6 w-8 h-8 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full flex items-center justify-center">
-                        <span className="text-sm font-bold text-blue-600">
+                      <div className="absolute top-6 right-6 w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
+                        <span className="text-sm font-bold text-purple-600">
                           {index + 1}
                         </span>
                       </div>
