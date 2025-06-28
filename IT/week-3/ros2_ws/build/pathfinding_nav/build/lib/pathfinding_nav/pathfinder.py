@@ -10,6 +10,7 @@ import numpy as np
 class PathFinder(Node):
     def __init__(self):
         super().__init__('astar_pathfinder')
+        self.get_logger().warn("TEaknmldkzjfmlqskdjfkml")
 
         self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
         self.odom_sub = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)

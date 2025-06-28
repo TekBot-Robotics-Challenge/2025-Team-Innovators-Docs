@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, CSSProperties } from "react";
 import {
   Zap,
   Cpu,
@@ -35,7 +35,7 @@ interface ElectroniqueData {
 const Electronique = () => {
   const [data, setData] = useState<ElectroniqueData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
-  const [sidebarStyle, setSidebarStyle] = useState<{ position: string; top?: string; bottom?: string }>({
+  const [sidebarStyle, setSidebarStyle] = useState<CSSProperties>({
     position: "sticky"
   });
   

@@ -1,0 +1,24 @@
+[1.142s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/src/pathfinding_nav': PYTHONPATH=/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pathfinding_nav build --build-base /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build install --record /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/install.log --single-version-externally-managed install_data
+[1.360s] running egg_info
+[1.361s] writing ../../build/pathfinding_nav/pathfinding_nav.egg-info/PKG-INFO
+[1.361s] writing dependency_links to ../../build/pathfinding_nav/pathfinding_nav.egg-info/dependency_links.txt
+[1.362s] writing entry points to ../../build/pathfinding_nav/pathfinding_nav.egg-info/entry_points.txt
+[1.362s] writing requirements to ../../build/pathfinding_nav/pathfinding_nav.egg-info/requires.txt
+[1.362s] writing top-level names to ../../build/pathfinding_nav/pathfinding_nav.egg-info/top_level.txt
+[1.364s] reading manifest file '../../build/pathfinding_nav/pathfinding_nav.egg-info/SOURCES.txt'
+[1.366s] writing manifest file '../../build/pathfinding_nav/pathfinding_nav.egg-info/SOURCES.txt'
+[1.366s] running build
+[1.366s] running build_py
+[1.368s] copying pathfinding_nav/pathfinder.py -> /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build/lib/pathfinding_nav
+[1.368s] running install
+[1.369s] running install_lib
+[1.370s] copying /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build/lib/pathfinding_nav/pathfinder.py -> /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav
+[1.371s] byte-compiling /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav/pathfinder.py to pathfinder.cpython-310.pyc
+[1.373s] running install_data
+[1.374s] running install_egg_info
+[1.375s] removing '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav-0.1.0-py3.10.egg-info' (and everything under it)
+[1.376s] Copying ../../build/pathfinding_nav/pathfinding_nav.egg-info to /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav-0.1.0-py3.10.egg-info
+[1.377s] running install_scripts
+[1.400s] Installing pathfinder script to /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/pathfinding_nav
+[1.400s] writing list of installed files to '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/install.log'
+[1.427s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/src/pathfinding_nav' returned '0': PYTHONPATH=/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pathfinding_nav build --build-base /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build install --record /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/install.log --single-version-externally-managed install_data

@@ -24,7 +24,7 @@ interface ITData {
 const IT = () => {
   const [data, setData] = useState<ITData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
-  const [sidebarStyle, setSidebarStyle] = useState<{ position: string; top?: string; bottom?: string }>({
+  const [sidebarStyle, setSidebarStyle] = useState<React.CSSProperties>({
     position: "sticky"
   });
   
