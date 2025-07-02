@@ -1,0 +1,4 @@
+source;share/tekbot_control/local_setup.bash
+source;share/tekbot_control/local_setup.dsv
+source;share/tekbot_control/local_setup.sh
+source;share/tekbot_control/local_setup.zsh

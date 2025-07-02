@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/pathfinding_nav/pathfinding_nav.egg-info/PKG-INFO
+writing dependency_links to ../../build/pathfinding_nav/pathfinding_nav.egg-info/dependency_links.txt
+writing entry points to ../../build/pathfinding_nav/pathfinding_nav.egg-info/entry_points.txt
+writing requirements to ../../build/pathfinding_nav/pathfinding_nav.egg-info/requires.txt
+writing top-level names to ../../build/pathfinding_nav/pathfinding_nav.egg-info/top_level.txt
+reading manifest file '../../build/pathfinding_nav/pathfinding_nav.egg-info/SOURCES.txt'
+writing manifest file '../../build/pathfinding_nav/pathfinding_nav.egg-info/SOURCES.txt'
+running build
+running build_py
+copying pathfinding_nav/pathfinder.py -> /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build/lib/pathfinding_nav
+running install
+running install_lib
+copying /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/build/lib/pathfinding_nav/pathfinder.py -> /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav
+byte-compiling /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav/pathfinder.py to pathfinder.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav-0.1.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/pathfinding_nav/pathfinding_nav.egg-info to /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/python3.10/site-packages/pathfinding_nav-0.1.0-py3.10.egg-info
+running install_scripts
+Installing pathfinder script to /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav/lib/pathfinding_nav
+writing list of installed files to '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/pathfinding_nav/install.log'

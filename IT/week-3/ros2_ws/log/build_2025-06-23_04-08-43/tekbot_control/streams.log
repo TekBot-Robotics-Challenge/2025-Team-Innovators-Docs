@@ -1,0 +1,50 @@
+[0.408s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/src/tekbot_sim/tekbot/tekbot_control -DCMAKE_INSTALL_PREFIX=/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control
+[0.519s] -- The C compiler identification is GNU 11.4.0
+[0.640s] -- The CXX compiler identification is GNU 11.4.0
+[0.659s] -- Detecting C compiler ABI info
+[0.834s] -- Detecting C compiler ABI info - done
+[0.859s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.862s] -- Detecting C compile features
+[0.863s] -- Detecting C compile features - done
+[0.867s] -- Detecting CXX compiler ABI info
+[1.038s] -- Detecting CXX compiler ABI info - done
+[1.057s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.059s] -- Detecting CXX compile features
+[1.059s] -- Detecting CXX compile features - done
+[1.066s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.375s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.568s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.767s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.771s] -- Added test 'lint_cmake' to check CMake code style
+[1.772s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.777s] -- Added test 'xmllint' to check XML markup files
+[1.792s] -- Configuring done
+[1.810s] -- Generating done
+[1.824s] -- Build files have been written to: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control
+[1.843s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/src/tekbot_sim/tekbot/tekbot_control -DCMAKE_INSTALL_PREFIX=/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control
+[1.845s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control -- -j4 -l4
+[2.103s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control -- -j4 -l4
+[2.109s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control
+[2.133s] -- Install configuration: ""
+[2.134s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/package_run_dependencies/tekbot_control
+[2.134s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/parent_prefix_path/tekbot_control
+[2.135s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/ament_prefix_path.sh
+[2.135s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/ament_prefix_path.dsv
+[2.138s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/path.sh
+[2.138s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/path.dsv
+[2.138s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.bash
+[2.139s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.sh
+[2.139s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.zsh
+[2.139s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.dsv
+[2.139s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/package.dsv
+[2.146s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/packages/tekbot_control
+[2.146s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/cmake/tekbot_controlConfig.cmake
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/cmake/tekbot_controlConfig-version.cmake
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/package.xml
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch/ekf_localization.launch.py
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch/tekbot_teleop_joy.launch.py
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config
+[2.147s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config/localization.yaml
+[2.148s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config/teleop_mactech.yaml
+[2.189s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/pathfinding_nav:/opt/ros/humble /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_control

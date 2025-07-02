@@ -1,0 +1,35 @@
+[0.319s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description -- -j4 -l4
+[0.551s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description' returned '0': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description -- -j4 -l4
+[0.571s] Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description
+[0.598s] -- Install configuration: ""
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/ament_index/resource_index/package_run_dependencies/tekbot_description
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/ament_index/resource_index/parent_prefix_path/tekbot_description
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/environment/ament_prefix_path.sh
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/environment/ament_prefix_path.dsv
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/environment/path.sh
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/environment/path.dsv
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/local_setup.bash
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/local_setup.sh
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/local_setup.zsh
+[0.599s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/local_setup.dsv
+[0.599s] -- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/package.dsv
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/ament_index/resource_index/packages/tekbot_description
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/cmake/tekbot_descriptionConfig.cmake
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/cmake/tekbot_descriptionConfig-version.cmake
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/package.xml
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/launch
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/launch/description.launch.py
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/launch/rviz.launch.py
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/launch/gazebo.launch.py
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/urdf
+[0.600s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/urdf/wheel.urdf.xacro
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/urdf/cylinder.urdf.xacro
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/urdf/tekbot.urdf
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/rviz
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/rviz/tekbot_des.rviz
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/meshes
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/meshes/robot_base.stl
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/meshes/wheel.stl
+[0.601s] -- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_description/share/tekbot_description/meshes/tire.stl
+[0.689s] Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description' returned '0': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description

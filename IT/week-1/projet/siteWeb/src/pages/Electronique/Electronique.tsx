@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, CSSProperties } from "react";
 import {
   Zap,
   Cpu,
@@ -7,7 +7,8 @@ import {
   ChevronRight,
   FileText,
 } from "lucide-react";
-import Semaine1 from "./semaine1";
+import semaineComponents from "./semaineComponents";
+
 // import Semaine1 from './semaine1.mdx'
 
 // Extend the Window interface to include AOS
@@ -35,6 +36,12 @@ interface ElectroniqueData {
 const Electronique = () => {
   const [data, setData] = useState<ElectroniqueData | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [sidebarStyle, setSidebarStyle] = useState<CSSProperties>({
+    position: "sticky"
+  });
+  
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Import des données depuis le fichier JSON
   useEffect(() => {
@@ -57,12 +64,45 @@ const Electronique = () => {
       window.AOS.refresh();
     }
 
-    // Observer pour la navigation active
-    const handleScroll = () => {
-      if (!data) return;
+    if (!data) return;
 
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Calculer la position du sidebar
+      const sidebarElement = sidebarRef.current;
+      const contentElement = contentRef.current;
+      
+      if (sidebarElement && contentElement) {
+        const sidebarHeight = sidebarElement.offsetHeight;
+        const contentRect = contentElement.getBoundingClientRect();
+        const contentTop = contentElement.offsetTop;
+        const contentBottom = contentTop + contentElement.offsetHeight;
+        
+        // Position initiale (sticky)
+        if (scrollPosition < contentTop - 100) {
+          setSidebarStyle({ position: "sticky" });
+        }
+        // Sidebar suit le scroll
+        else if (scrollPosition + sidebarHeight < contentBottom - 100) {
+          setSidebarStyle({ 
+            position: "fixed", 
+            top: "6rem"
+          });
+        }
+        // Sidebar se fixe en bas du contenu
+        else {
+          setSidebarStyle({ 
+            position: "absolute", 
+            bottom: "0"
+          });
+        }
+      }
+
+      // Observer pour la navigation active
       const sections = data.sections;
-      const scrollPosition = window.scrollY + 100;
+      const scrollPositionWithOffset = window.scrollY + 100;
 
       for (const section of sections) {
         const element = document.getElementById(section.id);
@@ -70,7 +110,7 @@ const Electronique = () => {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          if (scrollPositionWithOffset >= offsetTop && scrollPositionWithOffset < offsetBottom) {
             setActiveSection(section.id);
             break;
           }
@@ -79,6 +119,7 @@ const Electronique = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Appel initial
     return () => window.removeEventListener("scroll", handleScroll);
   }, [data]);
 
@@ -162,16 +203,20 @@ const Electronique = () => {
         <div className="px-6 pb-12">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Sidebar Navigation */}
-            <div className="lg:col-span-1">
-              <div className="sticky">
-                <div className="bg-white/70 backdrop-blur-lg p-6 rounded-3xl shadow-xl border border-white/20">
+            <div className="lg:col-span-1 relative">
+              <div 
+                ref={sidebarRef}
+                style={sidebarStyle}
+                className="w-full lg:w-70 transition-all duration-300 ease-out z-20"
+              >
+                <div className="bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-2xl border border-white/30 hover:bg-white/90 transition-all duration-300">
                   <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent flex items-center gap-2">
                     <FileText className="w-6 h-6 text-blue-600" />
                     Sections
                   </h2>
 
-                  <nav className="space-y-2">
-                    {data.sections.map((section) => {
+                  <nav className="space-y-3">
+                    {data.sections.map((section, index) => {
                       const IconComponent = getSectionIcon(section.id);
                       const isActive = activeSection === section.id;
 
@@ -179,69 +224,111 @@ const Electronique = () => {
                         <button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
-                          className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-center gap-3 group ${
+                          className={`w-full text-left p-4 rounded-2xl transition-all duration-500 ease-out flex items-center gap-3 group transform hover:scale-[1.02] ${
                             isActive
-                              ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg scale-105"
-                              : "hover:bg-blue-50 text-gray-700 hover:scale-102"
+                              ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg scale-[1.02] animate-pulse"
+                              : "hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 text-gray-700 hover:shadow-md"
                           }`}
+                          style={{
+                            animationDelay: `${index * 100}ms`,
+                            transform: isActive ? 'translateX(4px)' : 'translateX(0)'
+                          }}
                         >
-                          <IconComponent
-                            className={`w-5 h-5 ${
-                              isActive ? "text-white" : "text-blue-600"
-                            } transition-transform group-hover:scale-110`}
-                          />
-                          <span className="font-medium">{section.id}</span>
+                          <div className={`p-2 rounded-xl transition-all duration-300 ${
+                            isActive 
+                              ? "bg-white/20 shadow-inner" 
+                              : "bg-blue-100 group-hover:bg-blue-200"
+                          }`}>
+                            <IconComponent
+                              className={`w-4 h-4 ${
+                                isActive ? "text-white" : "text-blue-600"
+                              } transition-all duration-300 group-hover:scale-110`}
+                            />
+                          </div>
+                          <span className={`font-medium ${
+                            isActive ? "text-white" : "text-gray-700"
+                          }`}>
+                            {section.id}
+                          </span>
                           <ChevronRight
-                            className={`w-4 h-4 ml-auto transition-transform ${
+                            className={`w-4 h-4 ml-auto transition-all duration-300 ${
                               isActive
-                                ? "translate-x-1"
-                                : "group-hover:translate-x-1"
+                                ? "translate-x-1 text-white rotate-90"
+                                : "group-hover:translate-x-1 text-blue-400"
                             }`}
                           />
                         </button>
                       );
                     })}
                   </nav>
+
+                  {/* Progress indicator */}
+                  <div className="mt-6 pt-4 border-t border-blue-100">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <div className="flex-1 bg-gray-200 rounded-full h-1">
+                        <div 
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-1 rounded-full transition-all duration-300"
+                          style={{ 
+                            width: `${((data.sections.findIndex(s => s.id === activeSection) + 1) / data.sections.length) * 100}%`
+                          }}
+                        ></div>
+                      </div>
+                      <span className="min-w-max">
+                        {data.sections.findIndex(s => s.id === activeSection) + 1}/{data.sections.length}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Content Sections */}
-            <div className="lg:col-span-3">
+            {/* Content Sections */}
+            <div ref={contentRef} className="lg:col-span-3">
               <div className="space-y-8">
                 {data.sections.map((section, index) => {
                   const IconComponent = getSectionIcon(section.id);
+                  const SemaineComponent = semaineComponents[index]; // Utilisez la solution 2
+                  const isActive = activeSection === section.id;
 
                   return (
                     <div
                       key={section.id}
                       id={section.id}
-                      className="group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-                      data-aos="fade-up"
-                      data-aos-delay={`${index * 100}`}
+                      className={`group bg-white/70 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] scroll-mt-24 ${
+                        isActive ? "ring-2 ring-purple-300 shadow-2xl scale-[1.01]" : ""
+                      }`}
+                      
                     >
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className={`w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
+                          isActive ? "animate-pulse shadow-lg" : ""
+                        }`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
-                        <h2 className="text-3xl font-bold text-blue-700 group-hover:text-blue-600 transition-colors duration-300">
+                        <h2 className={`text-3xl font-bold text-purple-700 group-hover:text-purple-600 transition-colors duration-300 ${
+                          isActive ? "text-purple-600" : ""
+                        }`}>
                           {section.title}
                         </h2>
                       </div>
 
                       <div className="prose prose-lg max-w-none">
-                        {/* <p className="text-gray-700 leading-relaxed text-lg">
-                          {section.content}
-                        </p>
-                        <a href={section.link} className=" text-lg">
-                          Voir plus
-                        </a> */}
-                        <Semaine1 />
+                        {SemaineComponent && <SemaineComponent />}
                       </div>
 
                       {/* Decorative elements */}
                       <div className="mt-8 flex justify-end">
-                        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className={`w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300 ${
+                          isActive ? "w-32 opacity-100" : ""
+                        }`}></div>
+                      </div>
+
+                      {/* Section number */}
+                      <div className="absolute top-6 right-6 w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
+                        <span className="text-sm font-bold text-purple-600">
+                          {index + 1}
+                        </span>
                       </div>
                     </div>
                   );

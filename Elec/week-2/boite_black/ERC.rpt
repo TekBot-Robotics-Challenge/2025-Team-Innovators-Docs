@@ -1,0 +1,8 @@
+Rapport ERC (2025-06-25T00:26:28+0300, Encodage UTF8)
+
+***** Feuille /
+[power_pin_not_driven]: Pin entrée de puissance pilotée par aucune pin sortie de puissance
+    ; error
+    @(5400 mils, 2750 mils): Symbol #PWR01 Pin 1 [Power input, Line]
+
+** messages ERC: 1  Erreurs 1  Avertissements 0

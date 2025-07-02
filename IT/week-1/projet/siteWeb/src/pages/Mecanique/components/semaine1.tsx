@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCallback } from "react";
 import '../style.css';
-import { File } from "lucide-react";
+import { File, Download } from "lucide-react";
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -121,12 +121,11 @@ export const TableOfContents = () => {
 
 
 // Interface pour typer les ressources
-
 type FileItem = {
   name: string;
   file: string;
   type: "code" | "schematic" | "document" | "media";
-  url: string; // Ajout d'une URL pour le téléchargement/consultation
+  url: string;
 };
 
 export const FileLinks = () => {
@@ -149,7 +148,7 @@ export const FileLinks = () => {
       type: "document",
       url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output/massePiece3.pdf",
     },
-     {
+    {
       name: "massePiece4",
       file: "massePiece4.pdf",
       type: "document",
@@ -193,19 +192,26 @@ export const FileLinks = () => {
     },
   ];
 
-  const handleFileOpen = useCallback((file: FileItem) => {
-    // Stratégie d'ouverture selon le type de fichier
-    if (file.type === "document" || file.type === "media") {
-      // Ouverture dans un nouvel onglet pour les PDF et médias
-      window.open(file.url, "_blank");
-    } else {
-      // Téléchargement pour les autres types
+  const handleFileDownload = useCallback(async (file: FileItem) => {
+    try {
+      const response = await fetch(encodeURI(file.url));
+      if (!response.ok) throw new Error("Erreur lors du téléchargement");
+
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
       const link = document.createElement("a");
-      link.href = file.url;
+      link.href = blobUrl;
       link.download = file.file;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+
+      // Libérer la mémoire
+      URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      alert(`Erreur de téléchargement pour ${file.file}`);
+      console.error(error);
     }
   }, []);
 
@@ -224,16 +230,11 @@ export const FileLinks = () => {
       {files.map((item, index) => (
         <div
           key={index}
-          onClick={() => handleFileOpen(item)}
-          className={`
-            bg-white border border-gray-200 rounded-lg p-4 
-            hover:shadow-md transition-all cursor-pointer
-            hover:border-yellow-700 active:scale-[0.98]
-          `}
+          className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all"
         >
           <div className="flex items-center justify-between">
-            <div className="flex items-center truncate">
-              {/* Vos icônes existantes ici */}
+            <div className="flex items-center truncate gap-2">
+              <File className="w-5 h-5 text-gray-500 mr-2" />
               <div className="truncate">
                 <div className="font-medium text-gray-800 truncate">
                   {item.name}
@@ -243,14 +244,16 @@ export const FileLinks = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center ml-2">
-              <span
-                className={`px-2 py-1 rounded text-xs font-medium ${getTypeClasses(
-                  item.type
-                )}`}
-              >
-                <File />
+            <div className="flex items-center space-x-2">
+              <span className={`px-2 py-1 rounded text-xs font-medium ${getTypeClasses(item.type)}`}>
+                {item.type}
               </span>
+              <button
+                onClick={() => handleFileDownload(item)}
+                title={`Télécharger ${item.file}`}
+              >
+                <Download className="w-5 h-5 text-gray-500 hover:text-yellow-700" />
+              </button>
             </div>
           </div>
         </div>
@@ -260,17 +263,18 @@ export const FileLinks = () => {
 };
 
 
+
 import Pièce1 from "../screenshots/piece1.png";
 import Pièce1Final from "../screenshots/piece1final.png";
 import Pièce2 from "../screenshots/piece2.png";
 import Pièce2Final from "../screenshots/piece2final.png";
-import Piece3step1 from "../screenshots/piece3step1.png";
+import Piece3step1 from "../screenshots/piece3Step1.png";
 import Piece3step2 from "../screenshots/piece3step2.png";
-import Piece3step3 from "../screenshots/piece3step3.png";
+import Piece3step3 from "../screenshots/piece3Step3.png";
 import Piece3step4 from "../screenshots/piece3Final.png";
 import Piece4step1 from "../screenshots/pice4step1.png";
-import Piece4step2 from "../screenshots/piece4step2.png";
-import Piece4step3 from "../screenshots/piece4step3.png";
+import Piece4step2 from "../screenshots/piece4Step2.png";
+import Piece4step3 from "../screenshots/piece4Step3.png";
 import Piece4step4 from "../screenshots/piece4Final.png";
 import assemblage from "../screenshots/assemblage1.png";
 import pincePositionMinimal from "../screenshots/pincePositionMinimal.png";
