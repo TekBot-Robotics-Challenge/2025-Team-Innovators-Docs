@@ -376,12 +376,20 @@ export default function Afficheur7Segments() {
 
           <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-4 rounded-xl border-2 border-gray-200">
-              <img src={testPcb} alt="PCB en test" className="rounded-lg shadow-md w-full" />
-              <p className="text-center text-sm text-gray-500 mt-2">Montage en cours de soudure</p>
+              <a href={testPcb} target="_blank" rel="noopener noreferrer">
+                <img src={testPcb} alt="PCB en test" className="rounded-lg shadow-md w-full hover:opacity-90 cursor-pointer transition-opacity" />
+              </a>
+              <a href={testPcb} target="_blank" rel="noopener noreferrer" className="text-center text-sm text-blue-600 hover:text-blue-800 hover:underline mt-2 block">
+                Montage en cours de soudure
+              </a>
             </div>
             <div className="bg-white p-4 rounded-xl border-2 border-gray-200">
-              <img src={testPcbReussi} alt="PCB final" className="rounded-lg shadow-md w-full" />
-              <p className="text-center text-sm text-gray-500 mt-2">PCB final validé</p>
+              <a href={testPcbReussi} target="_blank" rel="noopener noreferrer">
+                <img src={testPcbReussi} alt="PCB final" className="rounded-lg shadow-md w-full hover:opacity-90 cursor-pointer transition-opacity" />
+              </a>
+              <a href={testPcbReussi} target="_blank" rel="noopener noreferrer" className="text-center text-sm text-blue-600 hover:text-blue-800 hover:underline mt-2 block">
+                PCB final validé
+              </a>
             </div>
           </div>
 
