@@ -1,0 +1,22 @@
+-- Install configuration: ""
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/package_run_dependencies/tekbot_control
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/parent_prefix_path/tekbot_control
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/ament_prefix_path.sh
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/path.sh
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/environment/path.dsv
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.bash
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.sh
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.zsh
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/local_setup.dsv
+-- Installing: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/package.dsv
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/ament_index/resource_index/packages/tekbot_control
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/cmake/tekbot_controlConfig.cmake
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/cmake/tekbot_controlConfig-version.cmake
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/package.xml
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch/ekf_localization.launch.py
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/launch/tekbot_teleop_joy.launch.py
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config/localization.yaml
+-- Up-to-date: /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/install/tekbot_control/share/tekbot_control/config/teleop_mactech.yaml

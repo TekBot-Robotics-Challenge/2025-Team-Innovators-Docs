@@ -1,0 +1,1 @@
+[('RV1', 'C:\\Program Files\\KiCad\\9.0\\share\\kicad\\3dmodels\\Potentiometer_THT.3dshapes\\Potentiometer_Bourns_3386P_Vertical.step')]

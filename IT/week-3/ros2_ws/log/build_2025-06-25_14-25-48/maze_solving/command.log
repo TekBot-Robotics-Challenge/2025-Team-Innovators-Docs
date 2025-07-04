@@ -1,0 +1,4 @@
+Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving -- -j4 -l4
+Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving' returned '0': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving -- -j4 -l4
+Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving
+Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving' returned '0': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/maze_solving

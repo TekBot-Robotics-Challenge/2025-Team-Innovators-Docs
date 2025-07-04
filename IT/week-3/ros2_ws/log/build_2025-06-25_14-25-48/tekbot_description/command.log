@@ -1,0 +1,4 @@
+Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description -- -j4 -l4
+Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description' returned '0': /usr/bin/cmake --build /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description -- -j4 -l4
+Invoking command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description
+Invoked command in '/home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description' returned '0': /usr/bin/cmake --install /home/innovator/2025-Team-Innovators-Docs/IT/week-3/ros2_ws/build/tekbot_description

@@ -1,5 +1,6 @@
 import { CodeViewer } from "../../components/CodeViewer";
 import { Navigation, Route, Folder, Settings, Rocket, Brain, BarChart, Box, MapPin, Eye } from 'lucide-react';
+import Gazebo from '../../assets/Gazebo.mp4';
 
 const PathfindingDocumentation = () => {
     const projectStructure = `ros2_ws/
@@ -178,8 +179,9 @@ rviz2`;
                         className="rounded-lg shadow-md border"
                         autoPlay
                         loop
+                        controls
                     >
-                        <source src="/Gazebo.mp4" type="video/mp4" />
+                        <source src={Gazebo} type="video/mp4" />
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
                 </div>
