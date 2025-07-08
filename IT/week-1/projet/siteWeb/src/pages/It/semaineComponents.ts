@@ -8,6 +8,7 @@ const components = [
   Semaine1,
   Semaine2,
   Semaine3,
+  
   // ... ajoutez les autres
 ];
 
