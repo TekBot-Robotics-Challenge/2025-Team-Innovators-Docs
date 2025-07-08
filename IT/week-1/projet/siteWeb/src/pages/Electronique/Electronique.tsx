@@ -206,7 +206,11 @@ const Electronique = () => {
             <div className="lg:col-span-1 relative">
               <div 
                 ref={sidebarRef}
-                style={sidebarStyle}
+                style={{
+                  position: sidebarStyle.position as 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed',
+                  top: sidebarStyle.top,
+                  bottom: sidebarStyle.bottom
+                }}
                 className="w-full lg:w-70 transition-all duration-300 ease-out z-20"
               >
                 <div className="bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-2xl border border-white/30 hover:bg-white/90 transition-all duration-300">
