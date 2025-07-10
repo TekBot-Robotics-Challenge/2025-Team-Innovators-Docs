@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Zap, Cog, Code, Home, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,9 +71,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Cog className="w-6 h-6 text-white animate-spin" style={{ animationDuration: '3s' }} />
-            </div>
+              <img src={logo} className="w-10 h-10 text-white rounded-lg flex items-center justify-center" />
             <div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Innovator Documentation
