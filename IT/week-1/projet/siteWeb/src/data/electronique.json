@@ -19,6 +19,12 @@
       "title": "Afficheur 7 Segments Mécanique à Servomoteurs",
       "content": "Cette section explique comment utiliser des servomoteurs pour contrôler un afficheur à 7 segments, permettant d'afficher des chiffres et des lettres de manière mécanique.",
       "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Elec/semaine3.md"
+    },
+    {
+      "id": "Test Final",
+      "title": "Système de Convoyeur",
+      "content": "",
+      "link": "https://github.com/TekBot-Robotics-Challenge/2025-Team-Innovators-Docs/blob/main/Elec/testFinal/Readme.md"
     }
   ]
 }
