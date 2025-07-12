@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
+import conveyorImage from "../screenshots/Illustration.jpg";
+
 
 // Table des matières avec navigation
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const sections = [
     { id: "etudes-preliminaires", title: "1. 🔍 Études Préliminaires" },
     { id: "choix-materiaux", title: "2. ⚙️ Choix et Justification des Matériaux" },
@@ -167,7 +169,7 @@ export default function TestFinal() {
           <Eye className="text-blue-600" />
           1. 🔍 Études Préliminaires
         </h2>
-        
+
         <div className="mb-8">
           <h3 className="text-xl font-semibold text-blue-800 mb-4">1.1 Analyse des besoins fonctionnels</h3>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
@@ -212,20 +214,20 @@ export default function TestFinal() {
           <Settings className="text-blue-600" />
           2. ⚙️ Choix et Justification des Matériaux et Composants
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <SpecCard icon={Package} title="Structure">
             <strong>Châssis en plastic</strong> : léger, solide, modulable.
           </SpecCard>
-          
+
           <SpecCard icon={Settings} title="Tapis roulant">
             <strong>Caoutchouc ou PVC</strong> : bonne adhérence, résistance à l'usure, nettoyage facile.
           </SpecCard>
-          
+
           <SpecCard icon={Wrench} title="Pièces imprimées (plastique PLA/ABS)">
             Toutes les pièces ont été imprimées en <strong>plastique (PLA ou ABS)</strong> car l'imprimante disponible ne permettait pas d'utiliser d'autres matériaux. Ce choix a aussi l'avantage de produire des pièces <strong>très légères</strong>.
           </SpecCard>
-          
+
           <SpecCard icon={Cpu} title="Moteur DC avec réducteur">
             Fournit un couple suffisant pour faire avancer le tapis avec une faible consommation.
           </SpecCard>
@@ -248,7 +250,7 @@ export default function TestFinal() {
           <Package className="text-blue-600" />
           3. 🧱 Structure Générale du Convoyeur
         </h2>
-        
+
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
           <h3 className="text-xl font-semibold text-blue-800 mb-4">3.1 Description globale</h3>
           <p className="text-gray-700 mb-4">
@@ -270,13 +272,13 @@ export default function TestFinal() {
           <Cpu className="text-blue-600" />
           4. 🧰 Modélisation CAO – Conception Assistée par Ordinateur
         </h2>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
             <h3 className="text-xl font-semibold text-blue-800 mb-4">4.1 Logiciel utilisé</h3>
             <p className="text-2xl font-bold text-blue-600">SolidWorks 2025</p>
           </div>
-          
+
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
             <h3 className="text-xl font-semibold text-blue-800 mb-4">4.2 Présentation des modèles 3D</h3>
             <ul className="space-y-2 text-sm text-gray-700">
@@ -314,7 +316,7 @@ export default function TestFinal() {
           <Settings className="text-blue-600" />
           6. 🛠️ Assemblage des Composants
         </h2>
-        
+
         <div className="space-y-6">
           {[
             {
@@ -323,13 +325,13 @@ export default function TestFinal() {
               content: "Couper les profilés plastic à la longueur : 2x 650 mm (longueur) + 2x 100 mm (hauteur). Connecter les montants avec des équerres en aluminium."
             },
             {
-              step: "2", 
+              step: "2",
               title: "Installation du tapis roulant",
               content: "Fixer les poulies à chaque extrémité. Monter le tapis sur les poulies avec tension manuelle. Ajouter un tendeur si besoin (ressort ou vis réglable)."
             },
             {
               step: "3",
-              title: "Fixation du moteur", 
+              title: "Fixation du moteur",
               content: "Installer le moteur à l'arrière gauche du châssis. Coupler le moteur à l'arbre de la poulie d'entraînement (avec accouplement ou courroie crantée)."
             },
             {
@@ -371,7 +373,7 @@ export default function TestFinal() {
           <Cpu className="text-blue-600" />
           8. 🧪 Simulation et Vérification
         </h2>
-        
+
         <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
           <ul className="space-y-3">
             <li>• Test de rotation du tapis sous contrainte de 100 g</li>
@@ -388,7 +390,7 @@ export default function TestFinal() {
           <Shield className="text-blue-600" />
           9. ✅ Sécurité et Fiabilité
         </h2>
-        
+
         <div className="bg-green-50 rounded-lg p-6 border border-green-200">
           <ul className="space-y-3 text-green-800">
             <li>• Arêtes vives ébavurées ou arrondies</li>
@@ -405,12 +407,19 @@ export default function TestFinal() {
           <Eye className="text-blue-600" />
           10. 📷 Illustration finale du design
         </h2>
-        
+
         <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 text-center border border-gray-300">
-          <div className="text-6xl mb-4">🏭</div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">Rendu 3D du Convoyeur</h3>
+          <div className="mb-4">
+            <img
+              src={conveyorImage}
+              alt="Illustration du système de convoyeur"
+              className="mx-auto w-full object-contain"
+            />
+          </div>
           <p className="text-gray-600">Illustration finale du système de convoyeur de tri intelligent</p>
         </div>
+
+
       </section>
 
       {/* Footer */}
