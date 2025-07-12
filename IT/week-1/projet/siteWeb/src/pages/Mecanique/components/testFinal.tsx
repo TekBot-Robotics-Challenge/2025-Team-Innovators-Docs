@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
 import conveyorImage from "../screenshots/Illustration.jpg";
+import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
+import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
+import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
 
 
 // Table des matières avec navigation
@@ -412,6 +415,27 @@ export default function TestFinal() {
           <div className="mb-4">
             <img
               src={conveyorImage}
+              alt="Illustration du système de convoyeur"
+              className="mx-auto w-full object-contain"
+            />
+          </div>
+          <div className="mb-4">
+            <img
+              src={illustrationTestFinal}
+              alt="Illustration du système de convoyeur"
+              className="mx-auto w-full object-contain"
+            />
+          </div>
+          <div className="mb-4">
+            <img
+              src={illustrationTestFinal2}
+              alt="Illustration du système de convoyeur"
+              className="mx-auto w-full object-contain"
+            />
+          </div>
+          <div className="mb-4">
+            <img
+              src={illustrationTestFinal3}
               alt="Illustration du système de convoyeur"
               className="mx-auto w-full object-contain"
             />
