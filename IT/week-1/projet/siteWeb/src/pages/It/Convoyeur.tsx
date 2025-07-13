@@ -371,7 +371,7 @@ const ConvoyeurDashboard: React.FC = () => {
                 <div className="text-center">
                   <div className="text-xs text-gray-500 mb-1">Résiduels</div>
                   <div className="text-lg font-bold text-red-500">
-{totalWaste > 0 ? ((wasteCounts.residual / totalWaste) * 100).toFixed(1) : 0}%
+                    {totalWaste > 0 ? ((wasteCounts.residual / totalWaste) * 100).toFixed(1) : 0}%
                   </div>
                 </div>
                 <div className="text-center">
@@ -463,13 +463,13 @@ const ConvoyeurDashboard: React.FC = () => {
                 })}
               </div>
               <br />
-<div className="text-2xl text-blue-500 font-bold italic text-center mt-2">
-  © {new Date().getFullYear()} Team Innovators IT
-</div>
+              <div className="text-2xl text-blue-500 font-bold italic text-center mt-2">
+                © {new Date().getFullYear()} Team Innovators IT
+              </div>
             </div>
 
             {/* Graphiques de performance */}
-            
+
           </div>
         </div>
       </div>
