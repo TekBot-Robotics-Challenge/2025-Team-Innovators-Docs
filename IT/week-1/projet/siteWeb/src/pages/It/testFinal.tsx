@@ -1,5 +1,5 @@
-import { CodeViewer } from "../../components/CodeViewer";
-import { Recycle, Zap, BarChart3, Globe, Target, Cpu, Palette, Monitor, Leaf, Trash2 } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Recycle, Zap, BarChart3, Globe, Target, Monitor, Leaf, Trash2, ChevronRight } from 'lucide-react';
 
 const TestFinal = () => {
     const projectStructure = `waste-sorting-system/
@@ -95,7 +95,7 @@ npm run dev`;
                 </p>
             </div>
 
-            
+
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
@@ -134,7 +134,7 @@ npm run dev`;
                 </ul>
             </div>
 
-           
+
 
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
@@ -189,6 +189,15 @@ npm run dev`;
                         <strong>Mission :</strong> Sensibiliser à la gestion intelligente des déchets à travers des outils visuels simples et efficaces.
                     </p>
                 </div>
+            </div>
+            <div className="mt-8 text-center">
+                <Link
+                    to="/convoyeur"
+                    className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
+                >
+                    Accéder au tableau de bord du convoyeur
+                    <ChevronRight className="w-5 h-5 ml-2" />
+                </Link>
             </div>
         </div>
     );
