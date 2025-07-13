@@ -27,6 +27,14 @@ interface WasteCard {
   description: string;
 }
 
+interface FloatingPlusOne {
+  id: number;
+  type: string;
+  top: number;
+  left: number;
+  opacity: number;
+}
+
 const ConvoyeurDashboard: React.FC = () => {
   const [wasteCounts, setWasteCounts] = useState({
     recyclable: 0,
@@ -39,6 +47,7 @@ const ConvoyeurDashboard: React.FC = () => {
   const [totalProcessed, setTotalProcessed] = useState(0);
   const [efficiency, setEfficiency] = useState(0);
   const [socket, setSocket] = useState<Socket | null>(null);
+  const [floatingPlusOnes, setFloatingPlusOnes] = useState<FloatingPlusOne[]>([]);
 
   const totalWaste = wasteCounts.recyclable + wasteCounts.organic + wasteCounts.electronic + wasteCounts.residual;
 
@@ -55,10 +64,8 @@ const ConvoyeurDashboard: React.FC = () => {
   // Écouter les événements du serveur
   useEffect(() => {
     if (!socket) return;
-    console.log("mandeha pory e!!!!!")
+    
     const handleWasteDetected = (data: { wasteType: string }) => {
-      console.log("voantso pory e!!!!")
-      console.log(data)
       setWasteCounts(prev => ({
         ...prev,
         [data.wasteType as keyof typeof prev]: prev[data.wasteType as keyof typeof prev] + 1
@@ -96,6 +103,45 @@ const ConvoyeurDashboard: React.FC = () => {
     setEfficiency(recyclableRate + organicRate + electronicRate + residualRate);
   }, [wasteCounts, totalWaste]);
 
+  // Gérer les animations +1
+  useEffect(() => {
+    if (clickedCard) {
+      // Générer une position aléatoire dans la carte
+      const cardElement = document.getElementById(`card-${clickedCard}`);
+      if (cardElement) {
+        const rect = cardElement.getBoundingClientRect();
+        const left = Math.random() * (rect.width - 40) + 20;
+        const top = rect.height / 2;
+        
+        const newPlusOne: FloatingPlusOne = {
+          id: Date.now(),
+          type: clickedCard,
+          top: top,
+          left: left,
+          opacity: 1
+        };
+
+        setFloatingPlusOnes(prev => [...prev, newPlusOne]);
+
+        // Animation de disparition progressive
+        const fadeInterval = setInterval(() => {
+          setFloatingPlusOnes(prev => 
+            prev.map(po => 
+              po.id === newPlusOne.id 
+                ? {...po, opacity: po.opacity - 0.05, top: po.top - 2} 
+                : po
+            ).filter(po => po.opacity > 0)
+          );
+        }, 50);
+
+        setTimeout(() => {
+          clearInterval(fadeInterval);
+          setFloatingPlusOnes(prev => prev.filter(po => po.id !== newPlusOne.id));
+        }, 1000);
+      }
+    }
+  }, [clickedCard]);
+
   const resetCounters = () => {
     setWasteCounts({
       recyclable: 0,
@@ -104,6 +150,7 @@ const ConvoyeurDashboard: React.FC = () => {
       residual: 0
     });
     setTotalProcessed(0);
+    setFloatingPlusOnes([]);
   };
 
   const wasteCategories: WasteCard[] = [
@@ -121,7 +168,7 @@ const ConvoyeurDashboard: React.FC = () => {
       title: "Déchets Organiques",
       count: wasteCounts.organic,
       icon: <Leaf className="w-8 h-8" />,
-      color: "text-amber-500",  // Changé de amber-600 à amber-500
+      color: "text-amber-500",
       bgColor: "bg-amber-50",
       darkBgColor: "bg-amber-100",
       type: "organic",
@@ -141,7 +188,7 @@ const ConvoyeurDashboard: React.FC = () => {
       title: "Déchets Résiduels",
       count: wasteCounts.residual,
       icon: <Trash2 className="w-8 h-8" />,
-      color: "text-red-500",  // Changé de red-600 à red-500
+      color: "text-red-500",
       bgColor: "bg-red-50",
       darkBgColor: "bg-red-100",
       type: "residual",
@@ -177,7 +224,6 @@ const ConvoyeurDashboard: React.FC = () => {
     </div>
   );
 
-  // Composant pour les barres de progression animées
   const ProgressBar = ({
     percentage = 0,
     color = "",
@@ -273,7 +319,7 @@ const ConvoyeurDashboard: React.FC = () => {
             <div className="space-y-4">
               <ProgressBar
                 percentage={totalWaste > 0 ? (wasteCounts.recyclable / totalWaste) * 100 : 0}
-                color="bg-emerald-500"  // Au lieu de "text-emerald-500"
+                color="bg-emerald-500"
                 height="h-3"
                 showLabel={true}
                 label="Recyclables"
@@ -350,8 +396,6 @@ const ConvoyeurDashboard: React.FC = () => {
           </div>
         </div>
 
-
-
         {/* Cartes des catégories avec barres de progression améliorées */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {wasteCategories.map((category) => {
@@ -359,15 +403,36 @@ const ConvoyeurDashboard: React.FC = () => {
             return (
               <div
                 key={category.type}
+                id={`card-${category.type}`}
                 className={`
                   ${clickedCard === category.type ? category.darkBgColor : category.bgColor}
                   rounded-xl p-6 border border-gray-200 shadow-sm 
                   hover:shadow-lg transition-all duration-300 
                   transform hover:scale-105 hover:-translate-y-1
                   ${clickedCard === category.type ? 'scale-110' : ''}
+                  relative overflow-hidden
                 `}
-              /* onClick={() => handleCardClick(category.type)} */
               >
+                {/* Animation +1 */}
+                {floatingPlusOnes
+                  .filter(po => po.type === category.type)
+                  .map(po => (
+                    <div
+                      key={po.id}
+                      className={`absolute text-4xl font-bold ${category.color}`}
+                      style={{
+                        top: `${po.top}px`,
+                        left: `${po.left}px`,
+                        opacity: po.opacity,
+                        transform: `translateY(-${(1 - po.opacity) * 50}px)`,
+                        transition: 'opacity 0.05s, transform 0.05s',
+                        pointerEvents: 'none'
+                      }}
+                    >
+                      +1
+                    </div>
+                  ))}
+
                 <div className="flex items-center justify-between mb-4">
                   <div className={`${category.color} p-3 rounded-xl bg-white shadow-sm`}>
                     {category.icon}
@@ -536,8 +601,6 @@ const ConvoyeurDashboard: React.FC = () => {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   );
