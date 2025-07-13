@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Recycle, Zap, BarChart3, Globe, Target, Monitor, Leaf, Trash2, ChevronRight } from 'lucide-react';
+import conveyorImage from './assets/illustration (1).png';
+import conveyorImage2 from './assets/illustration (2).png';
 
 const TestFinal = () => {
     const projectStructure = `waste-sorting-system/
@@ -134,47 +136,6 @@ npm run dev`;
                 </ul>
             </div>
 
-
-
-            <div className="bg-white rounded-lg p-6 shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5" /> Statistiques Temps Réel
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded">
-                        <h3 className="font-semibold text-green-800 flex items-center gap-2">
-                            <Recycle className="w-4 h-4" /> Recyclables
-                        </h3>
-                        <p className="text-2xl font-bold text-green-600">6,230</p>
-                        <p className="text-sm text-green-700">39.3%</p>
-                    </div>
-                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-                        <h3 className="font-semibold text-yellow-800 flex items-center gap-2">
-                            <Leaf className="w-4 h-4" /> Organiques
-                        </h3>
-                        <p className="text-2xl font-bold text-yellow-600">4,512</p>
-                        <p className="text-sm text-yellow-700">28.5%</p>
-                    </div>
-                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
-                        <h3 className="font-semibold text-blue-800 flex items-center gap-2">
-                            <Zap className="w-4 h-4" /> Électroniques
-                        </h3>
-                        <p className="text-2xl font-bold text-blue-600">2,134</p>
-                        <p className="text-sm text-blue-700">13.5%</p>
-                    </div>
-                    <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
-                        <h3 className="font-semibold text-red-800 flex items-center gap-2">
-                            <Trash2 className="w-4 h-4" /> Résiduels
-                        </h3>
-                        <p className="text-2xl font-bold text-red-600">2,971</p>
-                        <p className="text-sm text-red-700">18.7%</p>
-                    </div>
-                </div>
-                <div className="mt-4 text-center">
-                    <p className="text-3xl font-bold text-gray-800">Total trié : 15,847</p>
-                </div>
-            </div>
-
             <div className="bg-white rounded-lg p-6 shadow-md">
                 <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                     <Target className="w-5 h-5" /> Objectif du Projet
@@ -190,6 +151,23 @@ npm run dev`;
                     </p>
                 </div>
             </div>
+
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <img
+                    src={conveyorImage}
+                    alt="Convoyeur intelligent de tri des déchets"
+                    className="w-full h-auto object-cover"
+                />
+                <img
+                    src={conveyorImage2}
+                    alt="Convoyeur intelligent de tri des déchets"
+                    className="w-full h-auto object-cover"
+                />
+                <div className="p-4">
+                    <h3 className="font-semibold text-lg text-gray-800 mb-2">Dashboard</h3>
+                </div>
+            </div>
+
             <div className="mt-8 text-center">
                 <Link
                     to="/convoyeur"

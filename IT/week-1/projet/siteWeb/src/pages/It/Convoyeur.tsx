@@ -61,10 +61,10 @@ const ConvoyeurDashboard: React.FC = () => {
       console.log(data)
       setWasteCounts(prev => ({
         ...prev,
-        [data.wasteType]: prev[data.wasteType] + 1
+        [data.wasteType as keyof typeof prev]: prev[data.wasteType as keyof typeof prev] + 1
       }));
 
-      setClickedCard(data.type);
+      setClickedCard(data.wasteType);
       setTimeout(() => {
         setClickedCard(null);
       }, 300);
@@ -95,18 +95,6 @@ const ConvoyeurDashboard: React.FC = () => {
     const residualRate = totalWaste > 0 ? (wasteCounts.residual / totalWaste) * 100 : 0;
     setEfficiency(recyclableRate + organicRate + electronicRate + residualRate);
   }, [wasteCounts, totalWaste]);
-
-  const handleCardClick = (cardType: string) => {
-    setWasteCounts(prev => ({
-      ...prev,
-      [cardType]: prev[cardType] + 1
-    }));
-
-    setClickedCard(cardType);
-    setTimeout(() => {
-      setClickedCard(null);
-    }, 300);
-  };
 
   const resetCounters = () => {
     setWasteCounts({
@@ -161,7 +149,19 @@ const ConvoyeurDashboard: React.FC = () => {
     }
   ];
 
-  const StatCard = ({ title, value, icon, color, suffix = "" }) => (
+  const StatCard = ({
+    title,
+    value,
+    icon,
+    color,
+    suffix = ""
+  }: {
+    title: string;
+    value: string | number;
+    icon: React.ReactNode;
+    color: string;
+    suffix?: string;
+  }) => (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
       <div className="flex items-center justify-between mb-3">
         <div className={`p-3 rounded-lg ${color} bg-opacity-10`}>
@@ -179,8 +179,8 @@ const ConvoyeurDashboard: React.FC = () => {
 
   // Composant pour les barres de progression animées
   const ProgressBar = ({
-    percentage,
-    color,
+    percentage = 0,
+    color = "",
     height = "h-2",
     showLabel = false,
     label = "",
@@ -350,7 +350,7 @@ const ConvoyeurDashboard: React.FC = () => {
           </div>
         </div>
 
-        
+
 
         {/* Cartes des catégories avec barres de progression améliorées */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -366,7 +366,7 @@ const ConvoyeurDashboard: React.FC = () => {
                   transform hover:scale-105 hover:-translate-y-1
                   ${clickedCard === category.type ? 'scale-110' : ''}
                 `}
-                /* onClick={() => handleCardClick(category.type)} */
+              /* onClick={() => handleCardClick(category.type)} */
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className={`${category.color} p-3 rounded-xl bg-white shadow-sm`}>
