@@ -16,23 +16,19 @@
 | Élément            | Spécification                    |
 | ------------------ | -------------------------------- |
 | Longueur convoyeur | 650 mm                           |
-| Hauteur tapis      | 100 mm                           |
+| Hauteur tapis par rapport au sol     | 100 mm                           |
 | Poids du déchet    | Environ 20–30 g                  |
 | Taille déchet      | Cube de 30 mm x 30 mm x 30 mm    |
 | Mode de collecte   | Manuel, après tri                |
 
 
----
-
-## 2. ⚙️ Choix et Justification des Matériaux et Composants
-
 ### 2.1 Structure
 
-* **Châssis en plastic** : léger, solide, modulable .
+* **Châssis en bois découpé au laser** : Le châssis constitue la structure principale qui soutient et relie tous les composants du convoyeur. Il a été réalisé en bois, découpé au laser, pour garantir une robustesse optimale, une grande stabilité et une précision d’usinage, tout en facilitant l’adaptation aux dimensions requises.
 
 ### 2.2 Tapis roulant
 
-* **Caoutchouc ou PVC** : bonne adhérence, résistance à l'usure, nettoyage facile.
+* **Bâche PVC** : offre une bonne adhérence, une résistance à l’usure et facilite le nettoyage. Ce matériau est économique et facilement disponible, idéal pour la fabrication d’un tapis roulant adapté au tri des déchets.
 
 ### 2.3 Pièces imprimées (plastique PLA/ABS)
 
@@ -59,12 +55,14 @@
 
 ### 3.1 Description globale
 
-Le convoyeur est composé d’une **structure modulaire**  imprimés en plastique, comprenant :
-
-* Un tapis roulant en caoutchouc souple
+Le convoyeur est composé d’une **structure modulaire** constituée de pièces imprimées en plastique (PLA/ABS) et de parties en bois découpé au laser.  
+Il comprend :
+* Un tapis roulant en bâche PVC souple achetée
+* Un châssis principal en bois découpé au laser pour la stabilité
+* Des supports et accessoires imprimés en plastique pour l’intégration des capteurs et du moteur
 * Deux rouleaux (poulies) d'entraînement et de retour
 * Un support moteur et axe de rotation
-* Un châssis rigide avec pieds stabilisateurs
+* Un châssis rigide en bois découpé au laser avec pieds stabilisateurs
 * Un capteur de présence à l’entrée et un capteur de couleur au centre
 
 
@@ -72,15 +70,16 @@ Le convoyeur est composé d’une **structure modulaire**  imprimés en plastiqu
 
 ## 4. 🧰 Modélisation CAO – Conception Assistée par Ordinateur
 
-### 4.1 Logiciel utilisé : SolidWorks 2025
+### 4.1 Logiciel utilisé : SolidWorks 2025 Premium S1
+
+La modélisation 3D du convoyeur a été réalisée avec **SolidWorks 2025 Premium S1**, offrant des fonctionnalités avancées pour la conception mécanique, l’assemblage virtuel et la simulation. Ce logiciel permet une visualisation précise des composants, l’analyse des contraintes et l’optimisation du design avant la fabrication.
 
 ### 4.2 Présentation des modèles 3D
 
-* **Châssis du convoyeur** : modélisé avec profilés plastic.
-* **Tapis roulant** : surface mobile placée entre deux rouleaux.
-* **Poulies et rouleaux** : entraînement via moteur DC.
-* **Supports de capteurs** : pièces orientées et adaptées à chaque capteur.
-<!-- * **Bacs de tri** : modélisés et positionnés à la fin du convoyeur. -->
+* **Châssis en bois découpé au laser** : structure principale assurant robustesse et stabilité.
+* **Tapis roulant en bâche PVC** : surface mobile montée sur deux rouleaux d’entraînement et de retour.
+* **Poulies et rouleaux imprimés en PLA/ABS** : entraînement du tapis via moteur DC avec réducteur.
+* **Supports et accessoires pour capteurs** : pièces imprimées en plastique, intégrées au châssis pour optimiser la détection.
 
 ### 4.3 Assemblage
 
@@ -93,16 +92,16 @@ Le convoyeur est composé d’une **structure modulaire**  imprimés en plastiqu
 
 ## 5. 🧩 Liste des Composants Mécaniques
 
-| Élément                       | Matériau recommandé | Remarques                                  |
-| ----------------------------- | ------------------- | ------------------------------------------ |
-| Châssis                       | Plastic 20x20 mm  | Léger et modulaire                         |
-| Tapis roulant                 | Caoutchouc ou PVC   | Surface lisse, largeur \~80 mm             |
-| Poulies d’entraînement        | PLA/ABS (3D print)  | Diamètre 50 mm, matériau plastique léger   |
-| Arbre moteur                  | PLA/ABS    | Fixé par vis sans tête (en plastic)                    |
-| Support moteur                | PLA imprimé         | Fixe le moteur au châssis, léger           |
-| Moteur DC avec réducteur      | -                   | Fixé côté gauche                           |
-| Supports capteurs             | PLA/ABS             | Inclinaison optimisée pour champ de vision |
-| Pieds | PLA/ABS | Hauteur totale = 100 mm                    |
+| Élément                  | Matériau recommandé   | Remarques                                      |
+|-------------------------|----------------------|------------------------------------------------|
+| Châssis                 | Bois découpé au laser| Structure principale, robuste et stable         |
+| Tapis roulant           | Bâche PVC            | Bonne adhérence, largeur ~80 mm                 |
+| Poulies d’entraînement  | PLA/ABS (impression 3D) | Diamètre 50 mm, légères et adaptables       |
+| Arbre moteur            | PLA/ABS              | Fixation par vis sans tête, compatible moteur   |
+| Support moteur          | PLA/ABS (impression 3D) | Fixe le moteur au châssis, léger             |
+| Moteur DC avec réducteur| -                    | Fournit le couple, fixé côté gauche             |
+| Supports capteurs       | PLA/ABS (impression 3D) | Optimisés pour l’intégration des capteurs    |
+| Pieds stabilisateurs    | Bois ou PLA/ABS      | Hauteur totale = 100 mm, stabilité renforcée    |
 
 ---
 
@@ -170,4 +169,9 @@ Le convoyeur est composé d’une **structure modulaire**  imprimés en plastiqu
 
 ## 10. 📷 Illustration finale du design
 
-![Illustration](sandbox:/mnt/data/A_3D-rendered_digital_image_showcases_an_automated.png)
+![Support moteur](../screenshots/support%20moteur.jpg)
+![Support capteur couleur](../screenshots/Support%20capteur%20couleur.jpg)
+![Convoyeur](../screenshots/Convoyeur.jpg)
+![Convoyeur coloré](../screenshots/Convoyeur%20color%C3%A9.jpg)
+![Convoyeur coloré déchét poubelle](../screenshots/Convoyeur%20color%C3%A9%20d%C3%A9ch%C3%A9t%20poubelle.jpg)
+![Convoyeur coloré déchét en tapis](../screenshots/Convoyeur%20color%C3%A9%20d%C3%A9ch%C3%A9t%20en%20tapis.jpg)
