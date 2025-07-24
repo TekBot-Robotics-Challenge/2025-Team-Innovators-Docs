@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
 import conveyorImage from "../screenshots/Illustration.jpg";
 import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
@@ -11,7 +11,175 @@ import convoyeurColore from "../screenshots/Convoyeur coloré.jpg";
 import convoyeurDechet from "../screenshots/Convoyeur coloré déchét poubelle.jpg";
 import convoyeurTapis from "../screenshots/Convoyeur coloré déchét en tapis.jpg";
 
+type FileItem = {
+  name: string;
+  file: string;
+  type: "code" | "schematic" | "document" | "media";
+  url: string;
+};
 
+export const FileLinks = () => {
+  const files: FileItem[] = [
+    // Assemblage
+    {
+      name: "Convoyeur assemblé",
+      file: "Convoyeur_assemblé.SLDASM",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Convoyeur_assemblé.SLDASM",
+    },
+    
+    // Déchets
+    {
+      name: "Déchet Bleu",
+      file: "Déchét_Bleu.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Bleu.SLDPRT",
+    },
+    {
+      name: "Déchet Jaune",
+      file: "Déchét_Jaune.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Jaune.SLDPRT",
+    },
+    {
+      name: "Déchet Rouge",
+      file: "Déchét_Rouge.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Rouge.SLDPRT",
+    },
+    {
+      name: "Déchet Vert",
+      file: "Déchét_Vert.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Vert.SLDPRT",
+    },
+    
+    // Poubelles
+    {
+      name: "Poubelle Bleue",
+      file: "Poubelle_Bleu.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Bleu.SLDPRT",
+    },
+    {
+      name: "Poubelle Jaune",
+      file: "Poubelle_Jaune.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Jaune.SLDPRT",
+    },
+    {
+      name: "Poubelle Rouge",
+      file: "Poubelle_Rouge.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Rouge.SLDPRT",
+    },
+    {
+      name: "Poubelle Verte",
+      file: "Poubelle_Vert.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Vert.SLDPRT",
+    },
+    
+    // SolidWorks
+    {
+      name: "Aile droite",
+      file: "Aile_droite.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Aile_droite.SLDPRT",
+    },
+    {
+      name: "Aile gauche",
+      file: "Aile_gauche.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Aile_gauche.SLDPRT",
+    },
+    {
+      name: "Axe principal",
+      file: "axe1.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/axe1.SLDPRT",
+    },
+    {
+      name: "Partie principale",
+      file: "Part1.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Part1.SLDPRT",
+    },
+    {
+      name: "Support capteur",
+      file: "Support_capteur.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Support_capteur.SLDPRT",
+    },
+    {
+      name: "Tapis roulant",
+      file: "tapis.SLDPRT",
+      type: "document",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/tapis.SLDPRT",
+    }
+  ];
+
+  const handleFileOpen = useCallback((file: FileItem) => {
+    if (file.type === "document" || file.type === "media") {
+      window.open(file.url, "_blank");
+    } else {
+      const link = document.createElement("a");
+      link.href = file.url;
+      link.download = file.file;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, []);
+
+  const getTypeClasses = (type: FileItem["type"]) => {
+    const classes = {
+      code: "bg-blue-100 text-blue-700",
+      schematic: "bg-green-100 text-green-700",
+      document: "bg-lime-100 text-lime-700",
+      media: "bg-purple-100 text-purple-700",
+    };
+    return classes[type] || "bg-gray-100 text-gray-700";
+  };
+
+  return (
+    <div className="my-8">
+      <h2 className="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+        <File className="text-blue-600" />
+        Fichiers téléchargeables
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {files.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => handleFileOpen(item)}
+            className={`
+              bg-white border border-gray-200 rounded-lg p-4 
+              hover:shadow-md transition-all cursor-pointer
+              hover:border-yellow-700 active:scale-[0.98]
+              flex items-center justify-between
+            `}
+          >
+            <div className="flex-1 min-w-0">
+              <div className="font-medium text-gray-800 truncate">
+                {item.name}
+              </div>
+              <div className="text-sm text-gray-500 truncate">
+                {item.file}
+              </div>
+            </div>
+            <span
+              className={`px-2 py-1 rounded text-xs font-medium ${getTypeClasses(item.type)}`}
+            >
+              <File size={16} />
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 // Table des matières avec navigation
 export const TableOfContents = () => {
@@ -25,9 +193,10 @@ export const TableOfContents = () => {
     { id: "composants-mecaniques", title: "5. 🧩 Liste des Composants Mécaniques" },
     { id: "assemblage", title: "6. 🛠️ Assemblage des Composants" },
     { id: "cotation", title: "7. 📏 Cotation & Tolérances" },
-    { id: "simulation", title: "8. 🧪 Simulation et Vérification" },
+    { id: "simulation", title: "8. � Simulation et Vérification" },
     { id: "securite", title: "9. ✅ Sécurité et Fiabilité" },
-    { id: "illustration", title: "10. 📷 Illustration finale du design" }
+    { id: "illustration", title: "10. 📷 Illustration finale du design" },
+    { id: "downloads", title: "11. 📥 Fichiers téléchargeables" }
   ];
 
   return (
@@ -495,6 +664,11 @@ export default function TestFinal() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Section 11: Fichiers téléchargeables */}
+      <section id="downloads" className="mb-12">
+        <FileLinks />
       </section>
 
       {/* Footer */}
