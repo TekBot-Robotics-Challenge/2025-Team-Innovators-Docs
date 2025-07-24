@@ -4,7 +4,12 @@ import conveyorImage from "../screenshots/Illustration.jpg";
 import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
 import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
 import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
-
+import supportMoteur from "../screenshots/support moteur.jpg";
+import supportCapteur from "../screenshots/Support capteur couleur.jpg";
+import convoyeur from "../screenshots/Convoyeur.jpg";
+import convoyeurColore from "../screenshots/Convoyeur coloré.jpg";
+import convoyeurDechet from "../screenshots/Convoyeur coloré déchét poubelle.jpg";
+import convoyeurTapis from "../screenshots/Convoyeur coloré déchét en tapis.jpg";
 
 // Table des matières avec navigation
 export const TableOfContents = () => {
@@ -53,6 +58,7 @@ export const TableOfContents = () => {
 const SpecCard = ({ icon: Icon, title, children }: { icon: React.ElementType, title: string, children: React.ReactNode }) => (
   <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
     <div className="flex items-center gap-3 mb-3">
+      {Icon && <Icon className="text-blue-600" size={18} />}
       <h3 className="font-semibold text-gray-800">{title}</h3>
     </div>
     <div className="text-sm text-gray-600">{children}</div>
@@ -100,14 +106,14 @@ const ComponentTable = () => (
       </thead>
       <tbody>
         {[
-          ["Châssis", "Plastic 20x20 mm", "Léger et modulaire"],
-          ["Tapis roulant", "Caoutchouc ou PVC", "Surface lisse, largeur ~80 mm"],
-          ["Poulies d'entraînement", "PLA/ABS (3D print)", "Diamètre 50 mm, matériau plastique léger"],
-          ["Arbre moteur", "PLA/ABS", "Fixé par vis sans tête (en plastic)"],
-          ["Support moteur", "PLA imprimé", "Fixe le moteur au châssis, léger"],
-          ["Moteur DC avec réducteur", "-", "Fixé côté gauche"],
-          ["Supports capteurs", "PLA/ABS", "Inclinaison optimisée pour champ de vision"],
-          ["Pieds", "PLA/ABS", "Hauteur totale = 100 mm"]
+          ["Châssis", "Bois découpé au laser", "Structure principale, robuste et stable"],
+          ["Tapis roulant", "Bâche PVC", "Bonne adhérence, largeur ~80 mm"],
+          ["Poulies d'entraînement", "PLA/ABS (impression 3D)", "Diamètre 50 mm, légères et adaptables"],
+          ["Arbre moteur", "PLA/ABS", "Fixation par vis sans tête, compatible moteur"],
+          ["Support moteur", "PLA/ABS (impression 3D)", "Fixe le moteur au châssis, léger"],
+          ["Moteur DC avec réducteur", "-", "Fournit le couple, fixé côté gauche"],
+          ["Supports capteurs", "PLA/ABS (impression 3D)", "Optimisés pour l'intégration des capteurs"],
+          ["Pieds", "Bois ou PLA/ABS", "Hauteur totale = 100 mm, stabilité renforcée"]
         ].map(([element, material, remarks], i) => (
           <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
             <td className="border border-gray-300 px-4 py-3 font-medium">{element}</td>
@@ -220,15 +226,15 @@ export default function TestFinal() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <SpecCard icon={Package} title="Structure">
-            <strong>Châssis en plastic</strong> : léger, solide, modulable.
+            <strong>Châssis en bois découpé au laser</strong> : Le châssis constitue la structure principale qui soutient et relie tous les composants du convoyeur. Il a été réalisé en bois, découpé au laser, pour garantir une robustesse optimale, une grande stabilité et une précision d'usinage, tout en facilitant l'adaptation aux dimensions requises.
           </SpecCard>
 
           <SpecCard icon={Settings} title="Tapis roulant">
-            <strong>Caoutchouc ou PVC</strong> : bonne adhérence, résistance à l'usure, nettoyage facile.
+            <strong>Bâche PVC</strong> : offre une bonne adhérence, une résistance à l'usure et facilite le nettoyage. Ce matériau est économique et facilement disponible, idéal pour la fabrication d'un tapis roulant adapté au tri des déchets.
           </SpecCard>
 
           <SpecCard icon={Wrench} title="Pièces imprimées (plastique PLA/ABS)">
-            Toutes les pièces ont été imprimées en <strong>plastique (PLA ou ABS)</strong> car l'imprimante disponible ne permettait pas d'utiliser d'autres matériaux. Ce choix a aussi l'avantage de produire des pièces <strong>très légères</strong>.
+            Toutes les pièces ont été imprimées en <strong>plastique (PLA ou ABS)</strong> car l'imprimante disponible ne permettait pas d'utiliser d'autres matériaux. Ce choix a aussi l'avantage de produire des pièces <strong>très légères</strong>, facilement adaptables et rapides à fabriquer.
           </SpecCard>
 
           <SpecCard icon={Cpu} title="Moteur DC avec réducteur">
@@ -257,13 +263,15 @@ export default function TestFinal() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
           <h3 className="text-xl font-semibold text-blue-800 mb-4">3.1 Description globale</h3>
           <p className="text-gray-700 mb-4">
-            Le convoyeur est composé d'une <strong>structure modulaire</strong> imprimés en plastique, comprenant :
+            Le convoyeur est composé d'une <strong>structure modulaire</strong> constituée de pièces imprimées en plastique (PLA/ABS) et de parties en bois découpé au laser. Il comprend :
           </p>
           <ul className="space-y-2 text-gray-700">
-            <li>• Un tapis roulant en caoutchouc souple</li>
+            <li>• Un tapis roulant en bâche PVC souple achetée</li>
+            <li>• Un châssis principal en bois découpé au laser pour la stabilité</li>
+            <li>• Des supports et accessoires imprimés en plastique pour l'intégration des capteurs et du moteur</li>
             <li>• Deux rouleaux (poulies) d'entraînement et de retour</li>
             <li>• Un support moteur et axe de rotation</li>
-            <li>• Un châssis rigide avec pieds stabilisateurs</li>
+            <li>• Un châssis rigide en bois découpé au laser avec pieds stabilisateurs</li>
             <li>• Un capteur de présence à l'entrée et un capteur de couleur au centre</li>
           </ul>
         </div>
@@ -279,16 +287,19 @@ export default function TestFinal() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
             <h3 className="text-xl font-semibold text-blue-800 mb-4">4.1 Logiciel utilisé</h3>
-            <p className="text-2xl font-bold text-blue-600">SolidWorks 2025</p>
+            <p className="text-2xl font-bold text-blue-600">SolidWorks 2025 Premium S1</p>
+            <p className="text-gray-700 mt-2 text-sm">
+              La modélisation 3D du convoyeur a été réalisée avec <strong>SolidWorks 2025 Premium S1</strong>, offrant des fonctionnalités avancées pour la conception mécanique, l'assemblage virtuel et la simulation. Ce logiciel permet une visualisation précise des composants, l'analyse des contraintes et l'optimisation du design avant la fabrication.
+            </p>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
             <h3 className="text-xl font-semibold text-blue-800 mb-4">4.2 Présentation des modèles 3D</h3>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• <strong>Châssis du convoyeur</strong> : modélisé avec profilés plastic</li>
-              <li>• <strong>Tapis roulant</strong> : surface mobile placée entre deux rouleaux</li>
-              <li>• <strong>Poulies et rouleaux</strong> : entraînement via moteur DC</li>
-              <li>• <strong>Supports de capteurs</strong> : pièces orientées et adaptées</li>
+              <li>• <strong>Châssis en bois découpé au laser</strong> : structure principale assurant robustesse et stabilité</li>
+              <li>• <strong>Tapis roulant en bâche PVC</strong> : surface mobile montée sur deux rouleaux d'entraînement et de retour</li>
+              <li>• <strong>Poulies et rouleaux imprimés en PLA/ABS</strong> : entraînement du tapis via moteur DC avec réducteur</li>
+              <li>• <strong>Supports et accessoires pour capteurs</strong> : pièces imprimées en plastique, intégrées au châssis pour optimiser la détection</li>
             </ul>
           </div>
         </div>
@@ -412,45 +423,81 @@ export default function TestFinal() {
         </h2>
 
         <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 text-center border border-gray-300">
-          <div className="mb-4">
-            <img
-              src={conveyorImage}
-              alt="Illustration du système de convoyeur"
-              className="mx-auto w-full object-contain"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={supportMoteur}
+                alt="Support moteur"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Support moteur</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={supportCapteur}
+                alt="Support capteur couleur"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Support capteur couleur</p>
+            </div>
           </div>
-          <div className="mb-4">
-            <img
-              src={illustrationTestFinal}
-              alt="Illustration du système de convoyeur"
-              className="mx-auto w-full object-contain"
-            />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={convoyeur}
+                alt="Convoyeur"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Convoyeur</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={convoyeurColore}
+                alt="Convoyeur coloré"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Convoyeur coloré</p>
+            </div>
           </div>
-          <div className="mb-4">
-            <img
-              src={illustrationTestFinal2}
-              alt="Illustration du système de convoyeur"
-              className="mx-auto w-full object-contain"
-            />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={convoyeurDechet}
+                alt="Convoyeur coloré avec déchet poubelle"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Convoyeur coloré avec déchet poubelle</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={convoyeurTapis}
+                alt="Convoyeur coloré avec déchet sur tapis"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Convoyeur coloré avec déchet sur tapis</p>
+            </div>
           </div>
-          <div className="mb-4">
-            <img
-              src={illustrationTestFinal3}
-              alt="Illustration du système de convoyeur"
-              className="mx-auto w-full object-contain"
-            />
+
+          <div className="mt-8 grid grid-cols-1 gap-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={conveyorImage}
+                alt="Illustration du système de convoyeur"
+                className="mx-auto w-full h-96 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Vue d'ensemble du convoyeur</p>
+            </div>
           </div>
-          <p className="text-gray-600">Illustration finale du système de convoyeur de tri intelligent</p>
         </div>
-
-
       </section>
 
       {/* Footer */}
       <footer className="bg-blue-900 text-white rounded-lg p-6 text-center">
         <h3 className="text-lg font-semibold mb-2">🎯 Projet Terminé</h3>
         <p>Système de Convoyeur de Tri Intelligent - Documentation technique complète</p>
-        <p className="text-blue-200 text-sm mt-2">Conçu avec SolidWorks 2025</p>
+        <p className="text-blue-200 text-sm mt-2">Conçu avec SolidWorks 2025 Premium S1</p>
       </footer>
     </div>
   );
