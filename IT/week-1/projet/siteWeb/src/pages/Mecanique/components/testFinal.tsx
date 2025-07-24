@@ -11,6 +11,8 @@ import convoyeurColore from "../screenshots/Convoyeur coloré.jpg";
 import convoyeurDechet from "../screenshots/Convoyeur coloré déchét poubelle.jpg";
 import convoyeurTapis from "../screenshots/Convoyeur coloré déchét en tapis.jpg";
 
+
+
 // Table des matières avec navigation
 export const TableOfContents = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +57,9 @@ export const TableOfContents = () => {
 };
 
 // Composant pour afficher les spécifications techniques
-const SpecCard = ({ icon: Icon, title, children }: { icon: React.ElementType, title: string, children: React.ReactNode }) => (
+const SpecCard = ({ icon: Icon, title, children }: { icon?: React.ComponentType<{ className?: string; size?: number }>;
+  title: string;
+  children: React.ReactNode; }) => (
   <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
     <div className="flex items-center gap-3 mb-3">
       {Icon && <Icon className="text-blue-600" size={18} />}
