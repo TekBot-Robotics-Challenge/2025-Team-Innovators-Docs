@@ -25,7 +25,7 @@ export const FileLinks = () => {
       name: "Convoyeur assemblé",
       file: "Convoyeur_assemblé.SLDASM",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Convoyeur_assemblé.SLDASM",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Convoyeur_assemblé.SLDASM",
     },
     
     // Déchets
@@ -33,25 +33,25 @@ export const FileLinks = () => {
       name: "Déchet Bleu",
       file: "Déchét_Bleu.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Bleu.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Déchét_Bleu.SLDPRT",
     },
     {
       name: "Déchet Jaune",
       file: "Déchét_Jaune.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Jaune.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Déchét_Jaune.SLDPRT",
     },
     {
       name: "Déchet Rouge",
       file: "Déchét_Rouge.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Rouge.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Déchét_Rouge.SLDPRT",
     },
     {
       name: "Déchet Vert",
       file: "Déchét_Vert.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Déchét_Vert.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Déchét_Vert.SLDPRT",
     },
     
     // Poubelles
@@ -59,25 +59,25 @@ export const FileLinks = () => {
       name: "Poubelle Bleue",
       file: "Poubelle_Bleu.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Bleu.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Poubelle_Bleu.SLDPRT",
     },
     {
       name: "Poubelle Jaune",
       file: "Poubelle_Jaune.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Jaune.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Poubelle_Jaune.SLDPRT",
     },
     {
       name: "Poubelle Rouge",
       file: "Poubelle_Rouge.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Rouge.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Poubelle_Rouge.SLDPRT",
     },
     {
       name: "Poubelle Verte",
       file: "Poubelle_Vert.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Poubelle_Vert.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Poubelle_Vert.SLDPRT",
     },
     
     // SolidWorks
@@ -85,37 +85,37 @@ export const FileLinks = () => {
       name: "Aile droite",
       file: "Aile_droite.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Aile_droite.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Aile_droite.SLDPRT",
     },
     {
       name: "Aile gauche",
       file: "Aile_gauche.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Aile_gauche.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Aile_gauche.SLDPRT",
     },
     {
       name: "Axe principal",
       file: "axe1.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/axe1.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/axe1.SLDPRT",
     },
     {
       name: "Partie principale",
       file: "Part1.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Part1.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Part1.SLDPRT",
     },
     {
       name: "Support capteur",
       file: "Support_capteur.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/Support_capteur.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/Support_capteur.SLDPRT",
     },
     {
       name: "Tapis roulant",
       file: "tapis.SLDPRT",
       type: "document",
-      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/output3/tapis.SLDPRT",
+      url: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/outputTestFinal/tapis.SLDPRT",
     }
   ];
 
