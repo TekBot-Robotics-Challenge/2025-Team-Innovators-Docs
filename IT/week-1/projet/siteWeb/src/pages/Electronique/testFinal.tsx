@@ -170,73 +170,211 @@ export const FileLinks = () => {
 };
 
 export const VideoDemo = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<"main" | "color" | "object" | null>(null);
+
+  const videos = {
+    main: {
+      title: "Démonstration du Système de Convoyeur",
+      src: "https://www.youtube.com/embed/VIDEO_ID",
+      features: [
+        {
+          icon: <Settings className="w-5 h-5 text-blue-400" />,
+          title: "Technologie",
+          description: "Capteur couleur TCS3200 + Arduino Nano"
+        },
+        {
+          icon: <Zap className="w-5 h-5 text-yellow-400" />,
+          title: "Contrôle",
+          description: "L298N pour moteur DC"
+        },
+        {
+          icon: <Cpu className="w-5 h-5 text-green-400" />,
+          title: "Fonctionnalité",
+          description: "Tri automatique par couleur"
+        }
+      ]
+    },
+    color: {
+      title: "Test du Capteur de Couleur",
+      src: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/capteur_couleur.mp4",
+      features: [
+        {
+          icon: <Circuit className="w-5 h-5 text-purple-400" />,
+          title: "Précision",
+          description: "Détection RGB avec calibration"
+        },
+        {
+          icon: <Wrench className="w-5 h-5 text-orange-400" />,
+          title: "Configuration",
+          description: "Réglage des seuils de détection"
+        },
+        {
+          icon: <Code className="w-5 h-5 text-blue-400" />,
+          title: "Signal",
+          description: "Sortie PWM proportionnelle"
+        }
+      ]
+    },
+    object: {
+      title: "Test du Capteur d'Objet",
+      src: "https://tekbot-robotics-challenge.github.io/2025-Team-Innovators-Docs/capteur_objet.mp4",
+      features: [
+        {
+          icon: <Box className="w-5 h-5 text-red-400" />,
+          title: "Détection",
+          description: "Système laser + LDR"
+        },
+        {
+          icon: <Zap className="w-5 h-5 text-yellow-400" />,
+          title: "Réactivité",
+          description: "Temps de réponse < 50ms"
+        },
+        {
+          icon: <Settings className="w-5 h-5 text-green-400" />,
+          title: "Réglage",
+          description: "Seuil ajustable via potentiomètre"
+        }
+      ]
+    }
+  };
+
+  const renderVideoPlayer = () => {
+    if (!activeVideo) {
+      return (
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-6">Sélectionnez une vidéo à afficher</h3>
+            <div className="flex gap-4 justify-center">
+              <button
+                onClick={() => setActiveVideo("main")}
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105 flex flex-col items-center"
+              >
+                <Play className="w-8 h-8 text-white mb-2" />
+                <span className="text-white">Démo principale</span>
+              </button>
+              <button
+                onClick={() => setActiveVideo("color")}
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105 flex flex-col items-center"
+              >
+                <Play className="w-8 h-8 text-white mb-2" />
+                <span className="text-white">Capteur couleur</span>
+              </button>
+              <button
+                onClick={() => setActiveVideo("object")}
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105 flex flex-col items-center"
+              >
+                <Play className="w-8 h-8 text-white mb-2" />
+                <span className="text-white">Capteur objet</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const currentVideo = videos[activeVideo];
+    const isYouTube = currentVideo.src.includes('youtube');
+
+    return (
+      <div className="absolute inset-0 bg-black">
+        {isYouTube ? (
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src={currentVideo.src} 
+            title={currentVideo.title}
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          />
+        ) : (
+          <video 
+            width="100%" 
+            height="100%" 
+            controls 
+            autoPlay 
+            muted
+            className="object-contain"
+          >
+            <source src={currentVideo.src} type="video/mp4" />
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        )}
+        <div className="absolute top-4 left-4 flex gap-2">
+          <button
+            onClick={() => setActiveVideo(null)}
+            className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 text-white"
+          >
+            Retour
+          </button>
+          <button
+            onClick={() => {
+              if (activeVideo === 'main') setActiveVideo('color');
+              else if (activeVideo === 'color') setActiveVideo('object');
+              else setActiveVideo('main');
+            }}
+            className="px-4 py-2 bg-gray-600 rounded-lg hover:bg-gray-700 text-white"
+          >
+            Suivant
+          </button>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 my-8 shadow-2xl">
       <div className="flex items-center gap-3 mb-6">
         <Play className="w-8 h-8 text-blue-400" />
-        <h3 className="text-2xl font-bold text-white">Démonstration du Système de Convoyeur</h3>
+        <h3 className="text-2xl font-bold text-white">
+          {activeVideo ? videos[activeVideo].title : "Démonstrations Vidéo"}
+        </h3>
       </div>
 
       <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
         <div className="aspect-video bg-black rounded-lg relative overflow-hidden border-2 border-gray-600">
-          {!isPlaying ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600">
-              <button
-                onClick={() => setIsPlaying(true)}
-                className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
-              >
-                <Play className="w-16 h-16 text-white ml-1" />
-              </button>
-            </div>
-          ) : (
-            <div className="absolute inset-0 bg-black">
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/VIDEO_ID" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              />
-              <button
-                onClick={() => setIsPlaying(false)}
-                className="absolute top-4 right-4 px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 text-white"
-              >
-                Revenir à l'aperçu
-              </button>
-            </div>
-          )}
+          {renderVideoPlayer()}
         </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-gray-700 rounded-lg p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Settings className="w-5 h-5 text-blue-400" />
-              <span className="text-white font-semibold">Technologie</span>
-            </div>
-            <p className="text-gray-300">Capteur couleur TCS3200 + Arduino Nano</p>
+        {activeVideo && (
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {videos[activeVideo].features.map((feature, index) => (
+              <div key={index} className="bg-gray-700 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  {feature.icon}
+                  <span className="text-white font-semibold">{feature.title}</span>
+                </div>
+                <p className="text-gray-300">{feature.description}</p>
+              </div>
+            ))}
           </div>
-
-          <div className="bg-gray-700 rounded-lg p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-semibold">Contrôle</span>
-            </div>
-            <p className="text-gray-300">L298N pour moteur DC</p>
-          </div>
-
-          <div className="bg-gray-700 rounded-lg p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Cpu className="w-5 h-5 text-green-400" />
-              <span className="text-white font-semibold">Fonctionnalité</span>
-            </div>
-            <p className="text-gray-300">Tri automatique par couleur</p>
-          </div>
-        </div>
+        )}
       </div>
+
+      {!activeVideo && (
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div 
+            onClick={() => setActiveVideo("color")}
+            className="bg-gray-700 rounded-lg p-4 cursor-pointer hover:bg-gray-600 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <Image className="w-6 h-6 text-purple-400" />
+              <h4 className="text-lg font-bold text-white">Capteur de Couleur</h4>
+            </div>
+            <p className="mt-2 text-gray-300">Vidéo de test montrant la détection des différentes couleurs</p>
+          </div>
+          <div 
+            onClick={() => setActiveVideo("object")}
+            className="bg-gray-700 rounded-lg p-4 cursor-pointer hover:bg-gray-600 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <Box className="w-6 h-6 text-red-400" />
+              <h4 className="text-lg font-bold text-white">Capteur d'Objet</h4>
+            </div>
+            <p className="mt-2 text-gray-300">Vidéo de test montrant la détection de présence</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -544,7 +682,10 @@ uint8_t lireCouleur() {
   uint32_t counts[4];
   const uint8_t filtres[4][2] = {{LOW,LOW},{HIGH,HIGH},{LOW,HIGH},{HIGH,LOW}};
   for (int i = 0; i < 4; i++) {
-    digitalWrite(S2, filtres[i][0]);
+    digitalWrite(S
+
+New chat
+2, filtres[i][0]);
     digitalWrite(S3, filtres[i][1]);
     delay(100);
     counts[i] = pulseIn(OUT, LOW, 50000);
