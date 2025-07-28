@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
-import conveyorImage from "../screenshots/Illustration.jpg";
+import conveyorImage from "../screenshots/illustration.jpeg";
 import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
 import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
 import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
