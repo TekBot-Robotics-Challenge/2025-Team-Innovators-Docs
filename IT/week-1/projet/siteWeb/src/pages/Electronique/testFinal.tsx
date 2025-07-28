@@ -718,6 +718,34 @@ void envoyerWeb() {
             />
           </div>
 
+          <h2 id="schema-cablage" className="text-2xl font-bold text-blue-800 mt-12 mb-6">
+            Schéma de câblage détaillé
+          </h2>
+
+          <div className="bg-gray-800 rounded-xl p-6">
+            <CodeViewer
+              code={`#include <Stepper.h>
+
+const int stepsPerRevolution = 200;  // Nombre de pas par tour (adapter selon le moteur)
+
+// initialisation du stepper sur les broches 8, 9, 10, 12
+Stepper myStepper(stepsPerRevolution, 8, 9, 10, 12);
+
+void setup() {
+  Serial.begin(9600);
+  myStepper.setSpeed(60); // Vitesse en tours par minute (ajuste si besoin)
+}
+
+void loop() {
+  // Faire avancer de 1 pas dans un seul sens (positif)
+  myStepper.step(1);
+  Serial.println("Pas effectué");
+  delayMicroseconds(500); // Petite pause pour contrôler la vitesse (ajuste si besoin)
+}`}
+              language="cpp"
+            />
+          </div>
+
           <div className="mt-6 bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
             <p className="text-blue-700">
               <strong>Explication :</strong>
