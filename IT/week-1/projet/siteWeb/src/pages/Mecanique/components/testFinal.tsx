@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
-import conveyorImage from "../screenshots/illustration.jpeg";
+import convoyeurImage from "../screenshots/illustration.jpeg";
 import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
 import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
 import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
@@ -10,6 +10,10 @@ import convoyeur from "../screenshots/Convoyeur.jpg";
 import convoyeurColore from "../screenshots/Convoyeur coloré.jpg";
 import convoyeurDechet from "../screenshots/Convoyeur coloré déchét poubelle.jpg";
 import convoyeurTapis from "../screenshots/Convoyeur coloré déchét en tapis.jpg";
+import conv1 from "../screenshots/conv1.jpeg";
+import conv2 from "../screenshots/conv2.jpeg";
+import conv3 from "../screenshots/conv3.jpeg";
+import conv4 from "../screenshots/conv4.jpeg";
 
 type FileItem = {
   name: string;
@@ -596,6 +600,7 @@ export default function TestFinal() {
         </h2>
 
         <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 text-center border border-gray-300">
+          <h3 className="text-xl font-semibold text-blue-800 mb-6">Modèles 3D</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <img
@@ -634,7 +639,7 @@ export default function TestFinal() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <img
                 src={convoyeurDechet}
@@ -653,10 +658,49 @@ export default function TestFinal() {
             </div>
           </div>
 
+          <h3 className="text-xl font-semibold text-blue-800 mb-6 mt-8">Photos de l'assemblage réel</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={conv1}
+                alt="Assemblage réel du convoyeur - vue 1"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Assemblage réel - vue 1</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={conv2}
+                alt="Assemblage réel du convoyeur - vue 2"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Assemblage réel - vue 2</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={conv3}
+                alt="Assemblage réel du convoyeur - vue 3"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Assemblage réel - vue 3</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <img
+                src={conv4}
+                alt="Assemblage réel du convoyeur - vue 4"
+                className="mx-auto w-full h-64 object-contain"
+              />
+              <p className="mt-2 text-gray-600">Assemblage réel - vue 4</p>
+            </div>
+          </div>
+
           <div className="mt-8 grid grid-cols-1 gap-6">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <img
-                src={conveyorImage}
+                src={convoyeurImage}
                 alt="Illustration du système de convoyeur"
                 className="mx-auto w-full h-96 object-contain"
               />
