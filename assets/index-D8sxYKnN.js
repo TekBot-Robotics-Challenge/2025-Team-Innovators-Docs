@@ -634,7 +634,7 @@ void envoyerWeb() {
   doc["jaune"] = compteurJaune;
   serializeJson(doc, Serial);
   Serial.println();
-}`,language:"cpp"})}),n.jsx("h2",{id:"schema-cablage",className:"text-2xl font-bold text-blue-800 mt-12 mb-6",children:"Schéma de câblage détaillé"}),n.jsx("div",{className:"bg-gray-800 rounded-xl p-6",children:n.jsx(Ue,{code:`#include <Stepper.h>
+}`,language:"cpp"})}),n.jsx("h2",{id:"schema-cablage",className:"text-2xl font-bold text-blue-800 mt-12 mb-6",children:"8.2 Extrait du code pour le moteur pas à pas"}),n.jsx("div",{className:"bg-gray-800 rounded-xl p-6",children:n.jsx(Ue,{code:`#include <Stepper.h>
 
 const int stepsPerRevolution = 200;  // Nombre de pas par tour (adapter selon le moteur)
 
