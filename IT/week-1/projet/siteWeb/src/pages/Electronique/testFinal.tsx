@@ -307,16 +307,6 @@ export const VideoDemo = () => {
           >
             Retour
           </button>
-          <button
-            onClick={() => {
-              if (activeVideo === 'main') setActiveVideo('color');
-              else if (activeVideo === 'color') setActiveVideo('object');
-              else setActiveVideo('main');
-            }}
-            className="px-4 py-2 bg-gray-600 rounded-lg hover:bg-gray-700 text-white"
-          >
-            Suivant
-          </button>
         </div>
       </div>
     );
