@@ -719,7 +719,7 @@ void envoyerWeb() {
           </div>
 
           <h2 id="schema-cablage" className="text-2xl font-bold text-blue-800 mt-12 mb-6">
-            Schéma de câblage détaillé
+            8.2 Extrait du code pour le moteur pas à pas
           </h2>
 
           <div className="bg-gray-800 rounded-xl p-6">
