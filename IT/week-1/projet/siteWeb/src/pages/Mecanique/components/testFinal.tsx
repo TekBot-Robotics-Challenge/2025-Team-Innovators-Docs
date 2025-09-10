@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 import { File, ChevronDown, ChevronUp, Settings, Cpu, Package, Wrench, Shield, Eye } from "lucide-react";
 import convoyeurImage from "../screenshots/illustration.jpeg";
-import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
-import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
-import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
+// import illustrationTestFinal from "../screenshots/Illustration_test_final.jpg";
+// import illustrationTestFinal2 from "../screenshots/Illustration_test_final2.jpg";
+// import illustrationTestFinal3 from "../screenshots/Illustration_test_final3.jpg";
 import supportMoteur from "../screenshots/support moteur.jpg";
 import supportCapteur from "../screenshots/Support capteur couleur.jpg";
 import convoyeur from "../screenshots/Convoyeur.jpg";
@@ -335,7 +335,7 @@ const DimensionTable = () => (
 
 // Composant principal
 export default function TestFinal() {
-  const [activeSection, setActiveSection] = useState("etudes-preliminaires");
+  // const [activeSection, setActiveSection] = useState("etudes-preliminaires");
 
   return (
     <div className="max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen">
@@ -355,9 +355,43 @@ export default function TestFinal() {
           <Eye className="text-blue-600" />
           1. 🔍 Études Préliminaires
         </h2>
-
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.1 Analyse des besoins fonctionnels</h3>
+          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.1 Déscription Générale</h3>
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+           Il  consiste à  conçevoir et réaliser un système de convoyage parallèle utilisant  
+            une structure en bois et un tapis de transport en PVC. <br />
+            Ce type de convoyeur est destiné 
+            au transport horizontal 
+            de produits légers à moyens dans un environnement industriel ou semi-industriel
+          </div>
+          
+        </div>
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.2 Objectifs du Projet</h3>
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+             <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Assurer un transport efficace et continu de produits.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Optimiser les coûts par l'utilisation du bois comme matériau principal.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Garantir une maintenance simplifiée.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Respecter les normes de sécurité en vigueur.</span>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.3 Analyse des besoins fonctionnels</h3>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -389,7 +423,7 @@ export default function TestFinal() {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.2 Contraintes mécaniques</h3>
+          <h3 className="text-xl font-semibold text-blue-800 mb-4">1.4 Contraintes mécaniques</h3>
           <ConstraintTable />
         </div>
       </section>
