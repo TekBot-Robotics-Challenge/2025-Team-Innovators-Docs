@@ -13,6 +13,7 @@ import Electronique from "./pages/Electronique/Electronique";
 import Mecanique from "./pages/Mecanique/Mecanique";
 import IT from "./pages/It/IT";
 import Convoyeur from "./pages/It/Convoyeur";
+import Final from "./pages/Final/Final";
 const basename = import.meta.env.DEV
   ? "/" // en dev local, pas de base spécifique
   : "/2025-Team-Innovators-Docs"; // en prod GitHub Pages
@@ -40,6 +41,7 @@ function App() {
             <Route path="/electronique" element={<Electronique />} />
             <Route path="/mecanique" element={<Mecanique />} />
             <Route path="/it" element={<IT />} />
+            <Route path="/final" element={<Final />} />
             <Route path="/convoyeur" element={<Convoyeur />} />
           </Routes>
         </main>
