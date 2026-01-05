@@ -56,6 +56,12 @@ const Navbar = () => {
       href: '/it',
       icon: Code,
       color: 'from-purple-500 to-pink-500'
+    },
+    {
+      name: 'FINAL',
+      href: '/final',
+      icon: Code,
+      color: 'from-purple-500 to-pink-500'
     }
   ];
 
